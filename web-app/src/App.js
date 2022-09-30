@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+/* eslint linebreak-style: ["error", "windows"] */
+// import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
@@ -9,20 +10,15 @@ import React from 'react';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <span className="header">
+        Neural Style Transfer Website
+      </span>
+      <div className = "components">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          This website allows the user to upload a photo which is then styled
+          using a machine learning model
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
     </div>
   );
 }
