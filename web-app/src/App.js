@@ -1,7 +1,7 @@
 /* eslint linebreak-style: ["error", "windows"] */
-// import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import ImageUploader from './components/imageupload';
 
 
 /**
@@ -18,6 +18,7 @@ function App() {
           This website allows the user to upload a photo which is then styled
           using a machine learning model
         </p>
+        <ImageUploader />
       </div>
     </div>
   );

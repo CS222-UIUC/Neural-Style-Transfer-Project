@@ -4,20 +4,20 @@
   text-align: center;
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(#45f2f5, #049bc9);
+  background-image: linear-gradient(#45f2f5, #a849f5);
   display: flex;
   flex-direction: column;
 }
 
 .header {
   font-size: 40px;
-  color: white;
+  color: Black;
   font-family: "Bebas Neue";
-  text-shadow: 5px 2px black;
+  text-shadow: 1px 2px grey;
 }
 
 .components {
-  color: white;
+  color: black;
   font-family: "Bebas Neue";
 }
 

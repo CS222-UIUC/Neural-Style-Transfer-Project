@@ -1,0 +1,16 @@
+.imageUpload {
+    border: solid, 1px;
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+    background-color: orange;
+}
+
+.imageUpload:hover {
+    background-color: white;
+}
+
+.imageUpload:active {
+    transform: scale(0.9);
+}
