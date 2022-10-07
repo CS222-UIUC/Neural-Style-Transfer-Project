@@ -38,6 +38,8 @@
   "devDependencies": {
     "eslint": "^8.24.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-react": "^7.31.8"
-  }
+    "eslint-plugin-react": "^7.31.8",
+    "jest": "^27.5.1"
+  },
+  "type": "module"
 }
