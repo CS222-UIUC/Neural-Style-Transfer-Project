@@ -17,7 +17,7 @@ class App extends Component {
     console.log(event.target.files[0]);
     this.setState({
 
-      // This sets the state of the image to the image the uder uploaded
+      // This sets the state of selectedImage to image
       selectedImage: event.target.files[0],
     });
     console.log('This Works');
