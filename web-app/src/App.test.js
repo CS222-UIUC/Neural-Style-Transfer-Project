@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import uploadFile from './components/imageupload.js';
 
 test('renders App correctly with proper text', () => {
   render(<App />);
@@ -11,4 +12,9 @@ test('button appears', () => {
   render(<App />);
   const button = screen.getByRole("button");
   expect(button).toBeInTheDocument();
+});
+
+test('uploading a file works', () => {
+  let num = uploadFile();
+  expect(num == 10);
 });

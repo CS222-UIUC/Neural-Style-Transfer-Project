@@ -2,13 +2,20 @@
 import './imageupload.css';
 import React from 'react';
 
+function uploadFile() {
+  document.getElementById('image').click();
+  return 10;
+}
+
 const ImageUploader = () => {
   return (
     <>
-      <input type="image" style={{display: 'none'}} />
-      <button>
-          Upload Super Cool Image
-      </button>
+      <div className="imageUpload">
+        <button onClick={uploadFile}>
+          Upload Image
+        </button>
+        <input id="image" type="file" style={{display: 'none'}}/>
+      </div>
     </>
   );
 };

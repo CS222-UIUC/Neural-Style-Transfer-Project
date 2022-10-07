@@ -19,6 +19,8 @@
 .components {
   color: black;
   font-family: "Bebas Neue";
+  align-items: center;
+  justify-content: center;
 }
 
 .App-components {
@@ -30,4 +32,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.file-upload__input {
+  display: none;
 }

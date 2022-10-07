@@ -1,10 +1,11 @@
 .imageUpload {
-    border: solid, 1px;
     margin-top: 30px;
+    width: 50px;
     padding: 15px;
     border-radius: 5px;
     transition: 0.3s;
-    background-color: orange;
+    background-color: red;
+    align-content: center;
 }
 
 .imageUpload:hover {
