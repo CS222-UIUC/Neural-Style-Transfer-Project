@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
-import AddUser from "./components/Users/AddUser";
+import AddImage from "./components/Users/AddImage";
+import ImagesList from "./components/Users/ImagesList";
+
 function App() {
+  const [imagesList, setImagesList] = useState([]);
+
+  const addImageHandler = (newLabel, newImg) => {
+    setImagesList((prevImagesList) => {
+      return [
+        ...prevImagesList,
+        { label: newLabel, img: newImg, id: Math.random().toString() },
+      ];
+    });
+  };
+
   return (
     <div>
-      <AddUser />
+      <AddImage onAddImage={addImageHandler} />
+      <ImagesList images={imagesList} />
     </div>
   );
 }
