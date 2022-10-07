@@ -1,23 +1,32 @@
 /* eslint linebreak-style: ["error", "windows"] */
 import './imageupload.css';
-import React from 'react';
+import React, {Component} from 'react';
 
-function uploadFile() {
-  document.getElementById('image').click();
-  return 10;
-}
+class ImageUploader extends Component {
+  // Handles when button is clicked
+  buttonHandler = (event) => {
+    window.alert(event);
+    document.getElementById('practice').innerHTML = 100;
+  };
 
-const ImageUploader = () => {
-  return (
-    <>
-      <div className="imageUpload">
-        <button onClick={uploadFile}>
-          Upload Image
-        </button>
-        <input id="image" type="file" style={{display: 'none'}}/>
-      </div>
-    </>
-  );
+  uploadFile() {
+    document.getElementById('button').click();
+  }
+
+
+  render() {
+    return (
+      <>
+        <div className="imageUpload">
+          <button id="button" onClick={uploadFile}>
+            Upload Image
+            <p id="practice"></p>
+          </button>
+          <input id="image" type="file" onChange={buttonHandler}></input>
+        </div>
+      </>
+    );
+  }
 };
 
 export default ImageUploader;
