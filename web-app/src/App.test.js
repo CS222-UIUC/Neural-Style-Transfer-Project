@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import TestComponent from '../model/Main'
+import loadModel from '../model/Main'
+import sdfsadf from "../model/Main"
 
 test('renders learn react link', () => {
   render(<App />);
@@ -8,6 +9,7 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test('test external modle module', () => {
-  expect(TestComponent()).toBe(384);
+test('Model properly loads', () => {
+  let res_model = loadModel();
+  expect(res_model).not.toBeNull();
 });
