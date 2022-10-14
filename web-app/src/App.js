@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-import "@testing-library/jest-dom";
+import AddImage from "./components/Images/AddImage";
+import ImagesList from "./components/Images/ImagesList";
+import PickStyles from "./components/Styles/PickStyles";
 
-import AddImage from "./components/Users/AddImage";
-import ImagesList from "./components/Users/ImagesList";
+import classes from "./App.module.css";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
@@ -18,8 +19,11 @@ function App() {
   };
 
   return (
-    <div data-testid="AddImage">
-      <AddImage onAddImage={addImageHandler} />
+    <div className={classes.wrapper}>
+      <div className={classes.control}>
+        <AddImage onAddImage={addImageHandler} />
+        <PickStyles />
+      </div>
       <ImagesList images={imagesList} />
     </div>
   );
