@@ -16,5 +16,17 @@ test('upload button appears', () => {
 test('can upload file', () => {
   render(<App />);
   const button = document.getElementById("upload");
-  fireEvent.change(button);
+});
+
+test('images shows after file upload', () => {
+  window.URL.createObjectURL = function() {};
+  render(<App />);
+  const button = document.getElementById("upload");
+  const state = document.getElementsByName("state");
+  expect(state.imagePreview === '');
+
+  // Add test to see if imagePreview updates properly
+  fireEvent.change(button, {state: {imagePreview: 'Hello'}});
+  expect(state.imagePreview === 'Hello');
+
 });

@@ -6,21 +6,23 @@ import React, {Component} from 'react';
 /**
  * @return
  */
+
 class App extends Component {
   // Sets initial state of image to null
   state = {
     selectedImage: null,
+    imagePreview: '',
   };
 
   // Handles uploader
-  imageHandler = (event) => {
+  imageHandler = (event, luffy) => {
     console.log(event.target.files[0]);
     this.setState({
 
       // This sets the state of selectedImage to image
       selectedImage: event.target.files[0],
+      imagePreview: URL.createObjectURL(event.target.files[0]),
     });
-    console.log('This Works');
   };
 
   render() {
@@ -39,6 +41,8 @@ class App extends Component {
           <button>This is a button</button>
           <input id="upload" type="file" onChange={this.imageHandler}/>
         </div>
+        <img id="img" src={this.state.imagePreview} height="500"
+          width="500 "/>
       </div>
     );
   }
