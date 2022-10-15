@@ -6,7 +6,7 @@ import classes from "./AddImage.module.css";
 
 const AddImage = (props) => {
   const [enteredLabel, setEnteredLabel] = useState("");
-  const [enteredImage, setEnteredImage] = useState(null);
+  const [enteredImage, setEnteredImage] = useState(undefined);
 
   const addUserHandler = (event) => {
     event.preventDefault();

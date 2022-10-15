@@ -7,7 +7,7 @@ import vangogh from "./AllStyles/vangogh.png";
 import realism from "./AllStyles/realism.png";
 import stickman from "./AllStyles/stickman.png";
 
-const PickStyles = () => {
+const PickStyles = (props) => {
   const options = [
     { styleLabel: "Style 1", styleImage: vangogh },
     { styleLabel: "Style 2", styleImage: realism },
@@ -17,9 +17,9 @@ const PickStyles = () => {
   const [styleImage, setStyleImage] = useState(undefined);
 
   const styleImageChangeHandler = (event) => {
-    console.log(event.target.value);
+    console.log("event.target.value", event.target.value);
     setStyleImage(event.target.value);
-    // props.onChangeStyle(styleImage);
+    props.onChangeStyle(event.target.value);
   };
 
   return (

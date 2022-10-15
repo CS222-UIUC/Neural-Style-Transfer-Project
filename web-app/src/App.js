@@ -8,25 +8,33 @@ import classes from "./App.module.css";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
-  // const [style, setStyle] = useState("");
+  const [style, setStyle] = useState(undefined);
 
   const addImageHandler = (newLabel, newImg) => {
-    // setStyle();
     setImagesList((prevImagesList) => {
       return [
         ...prevImagesList,
-        { label: newLabel, img: newImg, id: Math.random().toString() },
+        {
+          label: newLabel,
+          img: newImg,
+          style: style,
+          id: Math.random().toString(),
+        },
       ];
     });
   };
 
-  // const changeStyleHandler = ()
+  const changeStyleHandler = (styleImage) => {
+    console.log(styleImage);
+    setStyle(styleImage);
+    console.log("handler ran", style);
+  };
 
   return (
     <div className={classes.wrapper}>
       <div className={classes.control}>
         <AddImage onAddImage={addImageHandler} />
-        <PickStyles />
+        <PickStyles onChangeStyle={changeStyleHandler} />
       </div>
       <ImagesList images={imagesList} />
     </div>
