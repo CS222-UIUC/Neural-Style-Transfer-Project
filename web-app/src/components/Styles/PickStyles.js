@@ -19,7 +19,7 @@ const PickStyles = () => {
   const styleImageChangeHandler = (event) => {
     console.log(event.target.value);
     setStyleImage(event.target.value);
-    console.log(styleImage);
+    // props.onChangeStyle(styleImage);
   };
 
   return (

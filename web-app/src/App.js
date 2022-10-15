@@ -8,8 +8,10 @@ import classes from "./App.module.css";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
+  // const [style, setStyle] = useState("");
 
   const addImageHandler = (newLabel, newImg) => {
+    // setStyle();
     setImagesList((prevImagesList) => {
       return [
         ...prevImagesList,
@@ -17,6 +19,8 @@ function App() {
       ];
     });
   };
+
+  // const changeStyleHandler = ()
 
   return (
     <div className={classes.wrapper}>
