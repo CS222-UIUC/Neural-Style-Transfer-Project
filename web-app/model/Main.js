@@ -1,6 +1,6 @@
-import * as tf from '@tensorflow/tfjs';
+// import * as tf from '@tensorflow/tfjs';
 
-export async function loadModel() {
+async function loadModel() {
     return tf.loadGraphModel('style_transfer_tfjs/model.json');
 }
 
@@ -12,7 +12,7 @@ async function doStyleTransfer() {
     let contentImage = document.getElementById('contentImage');
     let styleImage   = document.getElementById('styleImage');
 
-    console.log("hello");
+    console.log("Images successfully grabbed.");
 
     // Process images as tensors
     let contentImageTensor = preprocess(contentImage);
@@ -50,5 +50,3 @@ function preprocess(imageData) {
 }
 
 doStyleTransfer();
-
-export default doStyleTransfer;
