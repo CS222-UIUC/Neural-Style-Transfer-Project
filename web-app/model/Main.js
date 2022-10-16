@@ -49,4 +49,8 @@ function preprocess(imageData) {
     // })
 }
 
-doStyleTransfer();
+doStyleTransfer().then((model) => {
+    console.log(model);
+}).catch((reason) => {
+    console.log(reason);
+});
