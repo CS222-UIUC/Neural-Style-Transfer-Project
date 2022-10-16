@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import Card from "../UI/Card";
-import Button from "../UI/Button";
+import Card from "../UI/Card.js";
+import Button from "../UI/Button.js";
 import classes from "./AddImage.module.css";
 
 const AddImage = (props) => {

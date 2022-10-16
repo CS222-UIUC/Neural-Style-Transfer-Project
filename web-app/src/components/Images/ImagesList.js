@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../UI/Card";
+import Card from "../UI/Card.js";
 import classes from "./ImagesList.module.css";
 
 const ImagesList = (props) => {

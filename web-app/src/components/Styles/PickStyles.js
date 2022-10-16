@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Card from "../UI/Card";
+import Card from "../UI/Card.js";
 import classes from "./PickStyles.module.css";
 
 import vangogh from "./AllStyles/vangogh.png";

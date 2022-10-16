@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import AddImage from "./components/Images/AddImage";
-import ImagesList from "./components/Images/ImagesList";
-import PickStyles from "./components/Styles/PickStyles";
+import AddImage from "./components/Images/AddImage.js";
+import ImagesList from "./components/Images/ImagesList.js";
+import PickStyles from "./components/Styles/PickStyles.js";
 
 import classes from "./App.module.css";
 
