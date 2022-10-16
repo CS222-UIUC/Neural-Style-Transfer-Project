@@ -33,10 +33,13 @@ function App() {
   return (
     <div className={classes.wrapper}>
       <div className={classes.control}>
-        <AddImage onAddImage={addImageHandler} />
-        <PickStyles onChangeStyle={changeStyleHandler} />
+        <AddImage onAddImage={addImageHandler} id="AddImage-component" />
+        <PickStyles
+          onChangeStyle={changeStyleHandler}
+          data-testid="PickStyles-component"
+        />
       </div>
-      <ImagesList images={imagesList} />
+      <ImagesList images={imagesList} data-testid="ImagesList-component" />
     </div>
   );
 }
