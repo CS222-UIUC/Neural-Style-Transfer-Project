@@ -1,28 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
+import React, { useState } from "react";
 
+import AddImage from "./components/Images/AddImage.js";
+import ImagesList from "./components/Images/ImagesList.js";
+import PickStyles from "./components/Styles/PickStyles.js";
 
-/**
- * @return
- */
+import classes from "./App.module.css";
+
 function App() {
+  const [imagesList, setImagesList] = useState([]);
+  const [style, setStyle] = useState(undefined);
+
+  const addImageHandler = (newLabel, newImg) => {
+    setImagesList((prevImagesList) => {
+      return [
+        ...prevImagesList,
+        {
+          label: newLabel,
+          img: newImg,
+          style: style,
+          id: Math.random().toString(),
+        },
+      ];
+    });
+  };
+
+  const changeStyleHandler = (styleImage) => {
+    console.log(styleImage);
+    setStyle(styleImage);
+    console.log("handler ran", style);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.wrapper}>
+      <div className={classes.control}>
+        <AddImage onAddImage={addImageHandler} id="AddImage-component" />
+        <PickStyles
+          onChangeStyle={changeStyleHandler}
+          data-testid="PickStyles-component"
+        />
+      </div>
+      <ImagesList images={imagesList} data-testid="ImagesList-component" />
     </div>
   );
 }

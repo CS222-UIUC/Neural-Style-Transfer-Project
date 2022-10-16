@@ -1,0 +1,21 @@
+.images {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.images ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+.images li {
+  border: 1px solid #ccc;
+  margin: 0.5rem 0;
+  padding: 1rem;
+}
+
+.images label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
