@@ -14,3 +14,11 @@
   width: 100%;
   justify-content: center;
 }
+
+.bar {
+  margin: auto;
+  width: 60%;
+  align-items: center;
+  padding: 10px;
+}
+

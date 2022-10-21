@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AddImage from "./components/Images/AddImage.js";
 import ImagesList from "./components/Images/ImagesList.js";
 import PickStyles from "./components/Styles/PickStyles.js";
+import SocialBar from "./components/Socials/SocialBar.js";
 
 import classes from "./App.module.css";
 
@@ -40,6 +41,9 @@ function App() {
         />
       </div>
       <ImagesList images={imagesList} data-testid="ImagesList-component" />
+      <div className={classes.bar}>
+        <SocialBar/>
+      </div> 
     </div>
   );
 }

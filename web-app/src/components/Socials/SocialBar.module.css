@@ -1,0 +1,14 @@
+.bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+    padding: 20px 0;
+    max-width: 50vw;
+    justify-content: center;
+}
+
+.snap {
+    size: 500px;
+}
