@@ -33,8 +33,6 @@ async function doStyleTransfer() {
 }
 
 function preprocess(imageData) {
-  // return tf.tidy(() => {
-
   // Convert image to 3D tensor
   let tensor = tf.browser.fromPixels(imageData, (numChannels = 3));
 
@@ -45,8 +43,6 @@ function preprocess(imageData) {
   // Add dimension to achieve desired tensor shape
   const batched = normalized.expandDims(0);
   return batched;
-
-  // })
 }
 
 doStyleTransfer()

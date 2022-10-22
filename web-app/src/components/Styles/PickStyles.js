@@ -28,7 +28,9 @@ const PickStyles = (props) => {
         Style
         <select value={styleImage} onChange={styleImageChangeHandler}>
           {options.map((option) => (
-            <option value={option.styleImage}>{option.styleLabel}</option>
+            <option value={option.styleImage} key={Math.random().toString()}>
+              {option.styleLabel}
+            </option>
           ))}
         </select>
       </label>
