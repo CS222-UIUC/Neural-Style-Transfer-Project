@@ -3,6 +3,7 @@ import React from "react";
 import { FacebookIcon, FacebookShareButton, EmailShareButton, EmailIcon, TwitterIcon, TwitterShareButton } from "react-share";
 import classes from "./SocialBar.module.css";
 import SnapchatButton from "./Snap.js";
+// import DownloadButton from "./Download.js";
 
 const SocialBar = () => {
     const Url = window.location.href;

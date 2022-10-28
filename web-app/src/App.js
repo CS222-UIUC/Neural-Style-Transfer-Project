@@ -42,7 +42,7 @@ function App() {
       </div>
       <ImagesList images={imagesList} data-testid="ImagesList-component" />
       <div className={classes.bar}>
-        <SocialBar/>
+        <SocialBar id="social"/>
       </div> 
     </div>
   );
