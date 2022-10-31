@@ -17,4 +17,16 @@ describe("App.js Testing", () => {
     const label = document.getElementById("Label");
     expect(label).toBeInTheDocument();
   });
+
+  test("Image input exists", () => {
+    render(<App />);
+    const image = document.getElementById("Image");
+    expect(image).toBeInTheDocument();
+  });
+
+  test("Select component exists", () => {
+    render(<App />);
+    const select = document.getElementById("Select");
+    expect(select).toBeInTheDocument();
+  });
 });

@@ -26,7 +26,11 @@ const PickStyles = (props) => {
     <Card className={classes.styles}>
       <label>
         Style
-        <select value={styleImage} onChange={styleImageChangeHandler}>
+        <select
+          value={styleImage}
+          onChange={styleImageChangeHandler}
+          id="Select"
+        >
           {options.map((option) => (
             <option value={option.styleImage} key={Math.random().toString()}>
               {option.styleLabel}

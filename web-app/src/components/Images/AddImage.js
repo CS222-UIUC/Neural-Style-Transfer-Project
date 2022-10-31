@@ -46,7 +46,7 @@ const AddImage = (props) => {
         <label htmlFor="image">Image</label>
         <input
           type="file"
-          id="image"
+          id="Image"
           name="image"
           accept="image/*"
           onChange={imageChangeHandler}
