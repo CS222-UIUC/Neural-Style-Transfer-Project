@@ -3,13 +3,17 @@ import React, { useState } from "react";
 import AddImage from "./components/Images/AddImage.js";
 import ImagesList from "./components/Images/ImagesList.js";
 import PickStyles from "./components/Styles/PickStyles.js";
-import SocialBar from "./components/Socials/SocialBar.js";
+// import SocialBar from "./components/Socials/SocialBar.js";
+import SocialNav from "./components/Socials/SocialNav.js";
 
 import classes from "./App.module.css";
+import SocialBar from "./components/Socials/SocialBar.js";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
   const [style, setStyle] = useState(undefined);
+  const [open, setOpen] = useState(false);
+  const items = [<SocialBar/>];
 
   const addImageHandler = (newLabel, newImg) => {
     setImagesList((prevImagesList) => {
@@ -42,7 +46,7 @@ function App() {
       </div>
       <ImagesList images={imagesList} data-testid="ImagesList-component" />
       <div className={classes.bar}>
-        <SocialBar id="social"/>
+        <SocialNav className={classes.bar} open={open} setOpen={() => setOpen(!open)} items={items}/>
       </div> 
     </div>
   );

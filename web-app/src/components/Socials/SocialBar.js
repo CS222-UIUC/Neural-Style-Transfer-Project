@@ -2,7 +2,7 @@ import React from "react";
 // import Card from "../UI/Card.js";
 import { FacebookIcon, FacebookShareButton, EmailShareButton, EmailIcon, TwitterIcon, TwitterShareButton } from "react-share";
 import classes from "./SocialBar.module.css";
-import SnapchatButton from "./Snap.js";
+// import SnapchatButton from "./Snap.js";
 // import DownloadButton from "./Download.js";
 
 const SocialBar = () => {
@@ -22,9 +22,12 @@ const SocialBar = () => {
 
                 <EmailIcon size={30} round={true}/>
             </EmailShareButton>
-            <div className={classes.snap}>
-                <SnapchatButton/>
-            </div>
+            
+            {/* Fix Snapchat Button */}
+            
+            {/* <SnapchatButton>
+                Hello
+            </SnapchatButton> */}
         </div>
     );
 };

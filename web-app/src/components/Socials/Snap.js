@@ -4,7 +4,7 @@ import React from "react";
 
 const SnapchatButton = () => {
     (function (d, s, id) {
-        let js,
+        var js,
             sjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s);
