@@ -10,14 +10,9 @@ import { doStyleTransfer } from "./model/Main.js";
 
 import classes from "./App.module.css";
 import Button from "./components/UI/Button.js";
+import Recieve from "./model/Recieve.js";
 
 function App() {
-
-  const ref = useRef(null)
-  useEffect(() => {
-    const el2 = ref.current
-    console.log(el2);
-  })
 
   const [imagesList, setImagesList] = useState([]);
   const [style, setStyle] = useState(undefined);
@@ -62,10 +57,7 @@ function App() {
         <SocialBar/>
       </div> 
       <div>
-        <Draw></Draw>
-        <Button onClick={modelHandler}> 
-          Load model
-        </Button>
+        <Recieve route="api" />
       </div>
     </div>
   );
