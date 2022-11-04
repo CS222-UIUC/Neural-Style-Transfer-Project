@@ -5,23 +5,11 @@ import ImagesList from "./components/Images/ImagesList.js";
 import PickStyles from "./components/Styles/PickStyles.js";
 import SocialBar from "./components/Socials/SocialBar.js";
 import loadModel from "./model/Main.js";
-import Draw from "./model/Draw.js"
-import { doStyleTransfer } from "./model/Main.js";
 import NavBar from "./components/NavBar/Navbar.js";
 import classes from "./App.module.css";
-import tech from "./components/Storage/GIF/tech.gif";
-import BlueDot from "./components/Storage/PNG/Blue Dot .png";
-import BlackLines from "./components/Storage/PNG/Black lines.png";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Button from "./components/UI/Button.js";
 import Recieve from "./model/Recieve.js";
-import tech from "./components/Storage/GIF/tech.gif";
-import BlueDot from "./components/Storage/PNG/Blue Dot .png";
-import BlackLines from "./components/Storage/PNG/Black lines.png";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 function App() {
-
   const [imagesList, setImagesList] = useState([]);
   const [style, setStyle] = useState(undefined);
 
@@ -52,23 +40,19 @@ function App() {
   }
 
   return (
-
-
     <div className={classes.wrapper}>
-        <NavBar />
-        <NavBar />
+      <NavBar />
+
       <div className={classes.control}>
-
-
         <AddImage onAddImage={addImageHandler} id="AddImage-component" />
         <PickStyles
           onChangeStyle={changeStyleHandler}
           data-testid="PickStyles-component"
         />
       </div>
-  
-     <ImagesList images={imagesList} data-testid="ImagesList-component" />
-      
+
+      <ImagesList images={imagesList} data-testid="ImagesList-component" />
+
       <div className={classes.bar}>
         <SocialBar />
       </div>
