@@ -9,6 +9,10 @@ import Draw from "./model/Draw.js"
 import { doStyleTransfer } from "./model/Main.js";
 import NavBar from "./components/NavBar/Navbar.js";
 import classes from "./App.module.css";
+import tech from "./components/Storage/GIF/tech.gif";
+import BlueDot from "./components/Storage/PNG/Blue Dot .png";
+import BlackLines from "./components/Storage/PNG/Black lines.png";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Button from "./components/UI/Button.js";
 import Recieve from "./model/Recieve.js";
 import tech from "./components/Storage/GIF/tech.gif";
@@ -49,9 +53,12 @@ function App() {
 
   return (
 
+
     <div className={classes.wrapper}>
         <NavBar />
+        <NavBar />
       <div className={classes.control}>
+
 
         <AddImage onAddImage={addImageHandler} id="AddImage-component" />
         <PickStyles
@@ -63,8 +70,9 @@ function App() {
      <ImagesList images={imagesList} data-testid="ImagesList-component" />
       
       <div className={classes.bar}>
-        <SocialBar/>
-      </div> 
+        <SocialBar />
+      </div>
+
       <div>
         <Recieve route="api" />
       </div>
