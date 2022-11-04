@@ -38,3 +38,13 @@ test('Download renders and is clickable', () => {
   fireEvent.click(screen.getByText(/Download Image/i));
   expect(clicked === true);
 });
+
+test('Social Media Dropdown Works', () => {
+  render(<App/>);
+  let isShown = false;
+  const bar = document.getElementById('SocialBar');
+  if (bar) {
+    isShown = true;
+  }
+  expect(isShown === true);
+});

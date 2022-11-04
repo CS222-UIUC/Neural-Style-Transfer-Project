@@ -9,25 +9,27 @@ const SocialBar = () => {
     const Url = window.location.href;
 
     return (
-        <div className={classes.bar}>
-            <TwitterShareButton url={Url} title="Look at my cool picture!" id="button twitter">
+        <div className={classes.back}>
+            <div className={classes.bar}>
+                <TwitterShareButton url={Url} title="Look at my cool picture!" id="button twitter">
 
-                <TwitterIcon size={30} round={true}/>
-            </TwitterShareButton>
-            <FacebookShareButton url={Url} quote="Look at my cool picture!" id="button facebook">
+                    <TwitterIcon size={30} round={true}/>
+                </TwitterShareButton>
+                <FacebookShareButton url={Url} quote="Look at my cool picture!" id="button facebook">
 
-                <FacebookIcon size={30} round={true}/>
-            </FacebookShareButton>
-            <EmailShareButton url={Url} id="button email">
+                    <FacebookIcon size={30} round={true}/>
+                </FacebookShareButton>
+                <EmailShareButton url={Url} id="button email">
 
-                <EmailIcon size={30} round={true}/>
-            </EmailShareButton>
-            
-            {/* Fix Snapchat Button */}
-            
-            {/* <SnapchatButton>
-                Hello
-            </SnapchatButton> */}
+                    <EmailIcon size={30} round={true}/>
+                </EmailShareButton>
+                
+                {/* Fix Snapchat Button */}
+                
+                {/* <SnapchatButton>
+                    Hello
+                </SnapchatButton> */}
+            </div>
         </div>
     );
 };

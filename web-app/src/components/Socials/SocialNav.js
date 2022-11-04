@@ -7,16 +7,18 @@ const SocialNav = ({open, setOpen, items}) => {
 
     return (
         <div className={classes.wrapper}>
-            <button className={classes.button} onClick={setOpen}>
+            <button className={classes.button} onClick={setOpen} id="SocialNavButton">
                 {/* <img src={speech} alt="Socials" width="100px" height="100px"></img> */}
                 Post to Social Media!
             </button>
             {open && (
-                <SocialBar/>
+                <SocialBar className={classes.dropdown}/>
             )}
         </div>
     );
 }
+
+
 
 
 export default SocialNav

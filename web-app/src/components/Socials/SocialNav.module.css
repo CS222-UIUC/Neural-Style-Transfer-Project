@@ -30,3 +30,25 @@
 .button:hover {
     transform: scale(.95);
 }
+
+.dropdown {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-3em);
+    z-index: -1;
+    transition: all 0.3s ease 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.button:focus .dropdown,
+.button:focus-wthin .dropdown
+.button:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    transform: translateY(0);
+    transition-delay: 0s, 0s, 0.3s;
+}
