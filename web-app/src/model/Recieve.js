@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-
+import './Recieve.css'
 const Recieve = ({route}) => {
 
     const [data, setData] = useState(null);
