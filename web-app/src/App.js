@@ -44,10 +44,6 @@ function App() {
         />
       </div>
       <ImagesList images={imagesList} data-testid="ImagesList-component" />
-
-
-
-      
       <SocialNav id="SocialNav" className={classes.bar} open={open} setOpen={() => setOpen(!open)} items={items}/>
     </div>
   );
