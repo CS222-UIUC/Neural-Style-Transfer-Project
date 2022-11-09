@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import DownloadButton from "../components/Socials/Download";
+import DownloadButton from "./components/Socials/Download";
 
-import App from "../App";
+import App from "./App";
 import { test_util } from "@tensorflow/tfjs";
 
 // test("ImagesList: properly contains labels and images", () => {
