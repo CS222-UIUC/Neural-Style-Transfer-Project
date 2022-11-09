@@ -3,11 +3,10 @@ import React, { useState } from "react";
 import AddImage from "./components/Images/AddImage.js";
 import ImagesList from "./components/Images/ImagesList.js";
 import PickStyles from "./components/Styles/PickStyles.js";
-// import SocialBar from "./components/Socials/SocialBar.js";
+import SocialBar from "./components/Socials/SocialBar.js";
 import SocialNav from "./components/Socials/SocialNav.js";
 
 import classes from "./App.module.css";
-import SocialBar from "./components/Socials/SocialBar.js";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
@@ -45,9 +44,11 @@ function App() {
         />
       </div>
       <ImagesList images={imagesList} data-testid="ImagesList-component" />
-      <div className={classes.bar}>
-        <SocialNav id="SocialNav" className={classes.bar} open={open} setOpen={() => setOpen(!open)} items={items}/>
-      </div> 
+
+
+
+      
+      <SocialNav id="SocialNav" className={classes.bar} open={open} setOpen={() => setOpen(!open)} items={items}/>
     </div>
   );
 }

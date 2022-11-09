@@ -1,26 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import DownloadButton from "./components/Socials/Download";
-
-import App from "./App";
-import { test_util } from "@tensorflow/tfjs";
-
-// test("ImagesList: properly contains labels and images", () => {
-//   var input = [{ label: "Donkey Kong", img: "./dk.webp", id: "12345678" }];
-
-//   render(<ImagesList images={input} />);
-//   const imageslist = screen.getByRole("Card");
-//   expect(imageslist).toContainElement("img");
-// });
-
-// describe("App.js Testing", () => {
-//   test("Label name input box exists", () => {
-//     render(<App />);
-//     const label = document.getElementById("Label");
-//     expect(label).toBeInTheDocument();
-//   });
-// });
-
+import DownloadButton from "./components/Socials/Download.js";
+import App from "./App.js";
 
 test('Social Bar loads', () => {
   // render(<App/>); Error occurs here
