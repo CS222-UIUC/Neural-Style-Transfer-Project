@@ -35,7 +35,7 @@ const AddImage = (props) => {
 
   return (
     <Card className={classes.input}>
-      <form onSubmit={addUserHandler}>
+      <form onSubmit={addUserHandler} id="Form">
         <label htmlFor="Label">Label</label>
         <input
           id="Label"
@@ -51,7 +51,9 @@ const AddImage = (props) => {
           accept="image/*"
           onChange={imageChangeHandler}
         />
-        <Button type="submit">Add Image</Button>
+        <Button type="submit" id="Submit-button">
+          Add Image
+        </Button>
       </form>
     </Card>
   );
