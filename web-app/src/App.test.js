@@ -1,7 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import DownloadButton from "./components/Socials/Download.js";
 import App from "./App.js";
+import "@testing-library/jest-dom";
+import loadModel from "./model/Main.js";
+
+import DownloadButton from "./components/Socials/Download.js";
 
 test('Social Bar loads', () => {
   // render(<App/>); Error occurs here
@@ -29,3 +31,8 @@ test('Social Media Dropdown Works', () => {
   }
   expect(isShown === true);
 });
+
+// test('Model properly loads', () => {
+//   let res_model = loadModel();
+//   expect(res_model).not.toBeNull();
+// });
