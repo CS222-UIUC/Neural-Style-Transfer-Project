@@ -8,7 +8,7 @@ import SocialNav from "./components/Socials/SocialNav.js";
 import loadModel from "./model/Main.js";
 import NavBar from "./components/NavBar/Navbar.js";
 import classes from "./App.module.css";
-import Recieve from "./model/Recieve.js";
+import Receive from "./model/Receive.js";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
@@ -59,13 +59,12 @@ function App() {
       <SocialNav id="SocialNav" className={classes.bar} open={open} setOpen={() => setOpen(!open)} items={items}/>
 
       <div>
-        <Recieve route="api" />
+        <Receive route="api" />
       </div>
     </div>
   );
 }
 
 export default App;
-
 
 ///test 1
