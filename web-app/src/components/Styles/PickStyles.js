@@ -14,7 +14,7 @@ const PickStyles = (props) => {
     { styleLabel: "Style 3", styleImage: stickman },
   ];
 
-  const [styleImage, setStyleImage] = useState(undefined);
+  const [styleImage, setStyleImage] = useState(vangogh);
 
   const styleImageChangeHandler = (event) => {
     console.log("event.target.value", event.target.value);
