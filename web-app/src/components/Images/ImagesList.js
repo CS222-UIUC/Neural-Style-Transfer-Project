@@ -4,9 +4,10 @@ import classes from "./ImagesList.module.css";
 
 const ImagesList = (props) => {
   console.log(props.images);
+
   return (
     <Card className={classes.images}>
-      <ul>
+      <ul id="list-ul">
         {props.images.map((image) => (
           <li key={image.id}>
             <label>{image.label}</label>

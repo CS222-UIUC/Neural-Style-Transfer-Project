@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React, { useEffect, useRef, useState } from "react";
+=======
+import React, { useState } from "react";
+import * as tf from "@tensorflow/tfjs";
+>>>>>>> fe7a20ad6c034089eef5bdaed1d5b6ea12339fe9
 
 import AddImage from "./components/Images/AddImage.js";
 import ImagesList from "./components/Images/ImagesList.js";
@@ -14,16 +19,20 @@ function App() {
   const [style, setStyle] = useState(undefined);
 
   const addImageHandler = (newLabel, newImg) => {
+<<<<<<< HEAD
     // let stylizedImage = doStyleTransfer()
+=======
+    const styledImage = doStyleTransfer(newImg, style);
+
+>>>>>>> fe7a20ad6c034089eef5bdaed1d5b6ea12339fe9
     setImagesList((prevImagesList) => {
       return [
-        ...prevImagesList,
         {
           label: newLabel,
-          img: newImg,
-          style: style,
+          img: styledImage,
           id: Math.random().toString(),
         },
+        ...prevImagesList,
       ];
     });
   };
@@ -62,6 +71,45 @@ function App() {
       </div>
     </div>
   );
+}
+
+async function loadModel() {
+  return tf.loadGraphModel("style_transfer_tfjs/model.json");
+}
+
+function preprocess(imageData) {
+  // Convert image to 3D tensor
+  let tensor = tf.browser.fromPixels(imageData, 3);
+
+  // Normalize tensor
+  const offset = tf.scalar(255.0);
+  const normalized = tf.scalar(1.0).sub(tensor.div(offset));
+
+  // Add dimension to achieve desired tensor shape
+  const batched = normalized.expandDims(0);
+  return batched;
+}
+
+async function doStyleTransfer(contentImage, styleImage) {
+  const model = await loadModel();
+  console.log("StyleTransfer - model: ", model);
+
+  console.log("StyleTransfer - images: ", contentImage, styleImage);
+
+  // Process images as tensors
+  let contentImageTensor = preprocess(contentImage);
+  let styleImageTensor = preprocess(styleImage);
+
+  console.log("StyleTransfer - t1: ", contentImageTensor);
+  console.log("StyleTransfer - t2: ", styleImageTensor);
+
+  // Pass images through model to train
+  let result = model.execute([contentImageTensor, styleImageTensor]);
+
+  // Remove extra dimension from batched result
+  let outputImage = tf.squeeze(result);
+
+  return outputImage;
 }
 
 export default App;
