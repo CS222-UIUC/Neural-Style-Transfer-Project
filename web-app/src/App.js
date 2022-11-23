@@ -5,16 +5,14 @@ import ImagesList from "./components/Images/ImagesList.js";
 import PickStyles from "./components/Styles/PickStyles.js";
 import SocialBar from "./components/Socials/SocialBar.js";
 import SocialNav from "./components/Socials/SocialNav.js";
-import loadModel from "./model/Main.js";
 import NavBar from "./components/NavBar/Navbar.js";
 import classes from "./App.module.css";
-import Receive from "./model/Receive.js";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
   const [style, setStyle] = useState(undefined);
   const [open, setOpen] = useState(false);
-  const items = [<SocialBar/>];
+  const items = [<SocialBar />];
 
   const addImageHandler = (newLabel, newImg) => {
     // let stylizedImage = doStyleTransfer()
@@ -37,11 +35,6 @@ function App() {
     console.log("handler ran", style);
   };
 
-  async function modelHandler() {
-    const model = await loadModel();
-    console.log(model);
-  }
-
   return (
     <div className={classes.wrapper}>
       <NavBar />
@@ -56,11 +49,13 @@ function App() {
 
       <ImagesList images={imagesList} data-testid="ImagesList-component" />
 
-      <SocialNav id="SocialNav" className={classes.bar} open={open} setOpen={() => setOpen(!open)} items={items}/>
-
-      <div>
-        <Receive route="api" />
-      </div>
+      <SocialNav
+        id="SocialNav"
+        className={classes.bar}
+        open={open}
+        setOpen={() => setOpen(!open)}
+        items={items}
+      />
     </div>
   );
 }
