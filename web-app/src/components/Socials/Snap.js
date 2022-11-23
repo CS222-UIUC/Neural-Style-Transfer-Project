@@ -1,4 +1,5 @@
 import React from "react";
+
 // import classes from "./Snap.module.css";
 
 const SnapchatButton = () => {
@@ -9,11 +10,15 @@ const SnapchatButton = () => {
         js = d.createElement(s);
         js.id = id;
         js.src = "https://sdk.snapkit.com/js/v1/create.js";
-        sjs.parentNode.insertBefore(js, sjs);
+        if (sjs) {
+            sjs.parentNode.insertBefore(js, sjs);
+        }
     })(document, "script", "snapkit-creative-kit-sdk");
 
+    // const url = window.location.href;
+
     return (
-        <div id="snap" className="snapchat-creative-kit-share" data-text="false"></div>
+        <div id="snap" className="snapchat-creative-kit-share" data-text="false" data-share-url='https://courses.engr.illinois.edu/cs225/fa2022/'/>
     );
 };
 
