@@ -37,24 +37,21 @@ const Model = () => {
   }
 
   async function doStyleTransferNoParam() {
-    console.log("here");
+    let contentImageURL = "http://localhost:3001/api/content/content_image.jpg";
+    let styleImageURL = "http://localhost:3001/api/content/style_image.jpg";
+
+    let contentImage = await loadImage(contentImageURL);
+    let styleImage = await loadImage(styleImageURL);
+
     doStyleTransfer({
-      contentImageURL: "http://localhost:3001/api/content/content_image.jpg",
-      styleImageURL: "http://localhost:3001/api/content/style_image.jpg",
+      contentImage: contentImage,
+      styleImage: styleImage,
       outputRef: canvasRef,
     });
   }
 
-  async function doStyleTransfer({
-    contentImageURL,
-    styleImageURL,
-    outputRef,
-  }) {
+  async function doStyleTransfer({ contentImage, styleImage, outputRef }) {
     const model = await loadModel();
-
-    // Retrieve images from backend
-    let contentImage = await loadImage(contentImageURL);
-    let styleImage = await loadImage(styleImageURL);
 
     console.log("contentImage: ", contentImage);
     console.log("styleImage: ", styleImage);
