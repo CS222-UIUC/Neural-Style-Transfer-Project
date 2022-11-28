@@ -78,6 +78,7 @@ const Model = ({}) => {
       console.log("CANVAS DOES NOT EXIST");
       return;
     }
+
     tf.browser.toPixels(outputImage, canvas);
   }
 

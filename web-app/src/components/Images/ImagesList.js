@@ -14,14 +14,7 @@ const ImagesList = (props) => {
             <label>{image.label}</label>
             <img src={image.img} alt="current" width="100" height="100" />
             <img src={image.style} alt="style" width="100" height="100" />
-            <DownloadButton img={image.style} />
-            <button
-              onClick={() => {
-                console.log("hello");
-              }}
-            >
-              Style
-            </button>
+            <DownloadButton img={image.style}/>
           </li>
         ))}
       </ul>
