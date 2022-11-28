@@ -1,7 +1,7 @@
 import * as tf from "@tensorflow/tfjs";
 import { useState, useEffect, useRef } from "react";
 
-const Model = () => {
+const Model = ({}) => {
   const canvasRef = useRef(null);
 
   async function loadModel() {

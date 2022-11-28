@@ -14,6 +14,8 @@ function App() {
   const [open, setOpen] = useState(false);
   const items = [<SocialBar />];
 
+  const canvasRef = useRef(null);
+
   const addImageHandler = (newLabel, newImg) => {
     // let stylizedImage = doStyleTransfer()
     setImagesList((prevImagesList) => {
@@ -48,6 +50,15 @@ function App() {
       </div>
 
       <ImagesList images={imagesList} data-testid="ImagesList-component" />
+
+      <div>
+        CANVAS:
+        <canvas
+          className="testStyleCanvas"
+          ref={canvasRef}
+          data-testid="testStyleCanvas"
+        />
+      </div>
 
       <SocialNav
         id="SocialNav"
