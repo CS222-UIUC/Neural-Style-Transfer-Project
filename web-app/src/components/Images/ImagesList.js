@@ -16,7 +16,6 @@ const ImagesList = (props) => {
             <img src={image.img} alt="current" width="100" height="100" />
             <img src={image.style} alt="style" width="100" height="100" />
             <DownloadButton img={image.style}/>
-            <Model/>
           </li>
         ))}
       </ul>
