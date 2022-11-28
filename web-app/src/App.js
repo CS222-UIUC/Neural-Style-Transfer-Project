@@ -1,15 +1,11 @@
-<<<<<<< HEAD
 import React, { useEffect, useRef, useState } from "react";
-=======
-import React, { useState } from "react";
 import * as tf from "@tensorflow/tfjs";
->>>>>>> fe7a20ad6c034089eef5bdaed1d5b6ea12339fe9
 
 import AddImage from "./components/Images/AddImage.js";
 import ImagesList from "./components/Images/ImagesList.js";
 import PickStyles from "./components/Styles/PickStyles.js";
 import SocialBar from "./components/Socials/SocialBar.js";
-import loadModel from "./model/Main.js";
+import doStyleTransfer from "./model/Main.js";
 import NavBar from "./components/NavBar/Navbar.js";
 import classes from "./App.module.css";
 import Receive from "./model/Receive.js";
@@ -19,12 +15,9 @@ function App() {
   const [style, setStyle] = useState(undefined);
 
   const addImageHandler = (newLabel, newImg) => {
-<<<<<<< HEAD
     // let stylizedImage = doStyleTransfer()
-=======
-    const styledImage = doStyleTransfer(newImg, style);
+    let styledImage = doStyleTransfer(newImg, style);
 
->>>>>>> fe7a20ad6c034089eef5bdaed1d5b6ea12339fe9
     setImagesList((prevImagesList) => {
       return [
         {
@@ -43,10 +36,10 @@ function App() {
     console.log("handler ran", style);
   };
 
-  async function modelHandler() {
-    const model = await loadModel();
-    console.log(model);
-  }
+  // async function modelHandler() {
+  //   const model = await loadModel();
+  //   console.log(model);
+  // }
 
   return (
     <div className={classes.wrapper}>
@@ -73,44 +66,44 @@ function App() {
   );
 }
 
-async function loadModel() {
-  return tf.loadGraphModel("style_transfer_tfjs/model.json");
-}
+// async function loadModel() {
+//   return tf.loadGraphModel("style_transfer_tfjs/model.json");
+// }
 
-function preprocess(imageData) {
-  // Convert image to 3D tensor
-  let tensor = tf.browser.fromPixels(imageData, 3);
+// function preprocess(imageData) {
+//   // Convert image to 3D tensor
+//   let tensor = tf.browser.fromPixels(imageData, 3);
 
-  // Normalize tensor
-  const offset = tf.scalar(255.0);
-  const normalized = tf.scalar(1.0).sub(tensor.div(offset));
+//   // Normalize tensor
+//   const offset = tf.scalar(255.0);
+//   const normalized = tf.scalar(1.0).sub(tensor.div(offset));
 
-  // Add dimension to achieve desired tensor shape
-  const batched = normalized.expandDims(0);
-  return batched;
-}
+//   // Add dimension to achieve desired tensor shape
+//   const batched = normalized.expandDims(0);
+//   return batched;
+// }
 
-async function doStyleTransfer(contentImage, styleImage) {
-  const model = await loadModel();
-  console.log("StyleTransfer - model: ", model);
+// async function doStyleTransfer(contentImage, styleImage) {
+//   const model = await loadModel();
+//   console.log("StyleTransfer - model: ", model);
 
-  console.log("StyleTransfer - images: ", contentImage, styleImage);
+//   console.log("StyleTransfer - images: ", contentImage, styleImage);
 
-  // Process images as tensors
-  let contentImageTensor = preprocess(contentImage);
-  let styleImageTensor = preprocess(styleImage);
+//   // Process images as tensors
+//   let contentImageTensor = preprocess(contentImage);
+//   let styleImageTensor = preprocess(styleImage);
 
-  console.log("StyleTransfer - t1: ", contentImageTensor);
-  console.log("StyleTransfer - t2: ", styleImageTensor);
+//   console.log("StyleTransfer - t1: ", contentImageTensor);
+//   console.log("StyleTransfer - t2: ", styleImageTensor);
 
-  // Pass images through model to train
-  let result = model.execute([contentImageTensor, styleImageTensor]);
+//   // Pass images through model to train
+//   let result = model.execute([contentImageTensor, styleImageTensor]);
 
-  // Remove extra dimension from batched result
-  let outputImage = tf.squeeze(result);
+//   // Remove extra dimension from batched result
+//   let outputImage = tf.squeeze(result);
 
-  return outputImage;
-}
+//   return outputImage;
+// }
 
 export default App;
 
