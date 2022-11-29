@@ -22,7 +22,7 @@ const AddImage = (props) => {
     }
     props.onAddImage(enteredLabel, enteredImage);
     setEnteredLabel("");
-    setEnteredImage(null);
+    // setEnteredImage(null);
   };
 
   const labelChangeHandler = (event) => {
@@ -31,6 +31,7 @@ const AddImage = (props) => {
 
   const imageChangeHandler = (event) => {
     setEnteredImage(URL.createObjectURL(event.target.files[0]));
+    console.log("here: ", enteredImage);
   };
 
   return (
