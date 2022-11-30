@@ -8,20 +8,19 @@ import SocialBar from "./components/Socials/SocialBar.js";
 import SocialNav from "./components/Socials/SocialNav.js";
 import NavBar from "./components/NavBar/Navbar.js";
 import classes from "./App.module.css";
+import vangogh from "./components/Styles/AllStyles/vangogh.png";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
-  const [style, setStyle] = useState(undefined);
+  const [style, setStyle] = useState(vangogh);
   const [open, setOpen] = useState(false);
   const items = [<SocialBar />];
 
   const canvasRef = useRef(null);
-  const [myURL, setMyURL] = useState("");
 
   const HOST_URL = "localhost:3000";
 
   const addImageHandler = async (newLabel, newImg) => {
-    // let stylizedImage = doStyleTransfer()
     let contentImage = await loadImage(newImg);
     let styleImage = await loadImage("http://" + HOST_URL + style);
 
@@ -39,6 +38,7 @@ function App() {
           img: newImg,
           style: style,
           id: Math.random().toString(),
+          canvasRef: canvasRef,
         },
       ];
     });
