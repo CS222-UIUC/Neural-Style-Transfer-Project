@@ -20,7 +20,7 @@ function App() {
 
   const HOST_URL = "localhost:3000";
 
-  const addImageHandler = async (newLabel, newImg) => {
+  const addImageHandler = async (newImg) => {
     let contentImage = await loadImage(newImg);
     let styleImage = await loadImage("http://" + HOST_URL + style);
 
@@ -34,7 +34,6 @@ function App() {
       return [
         ...prevImagesList,
         {
-          label: newLabel,
           img: newImg,
           style: style,
           id: Math.random().toString(),
@@ -63,15 +62,6 @@ function App() {
       </div>
 
       <ImagesList images={imagesList} data-testid="ImagesList-component" />
-
-      <div>
-        CANVAS:
-        <canvas
-          className="testStyleCanvas"
-          ref={canvasRef}
-          data-testid="testStyleCanvas"
-        />
-      </div>
 
       <SocialNav
         id="SocialNav"

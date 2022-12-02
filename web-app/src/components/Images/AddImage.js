@@ -5,28 +5,16 @@ import Button from "../UI/Button.js";
 import classes from "./AddImage.module.css";
 
 const AddImage = (props) => {
-  const [enteredLabel, setEnteredLabel] = useState("");
   const [enteredImage, setEnteredImage] = useState(undefined);
 
   const addUserHandler = (event) => {
     event.preventDefault();
 
-    if (enteredLabel.trim().length === 0) {
-      console.log("Invalid label!");
-      return;
-    }
-
     if (enteredImage === null) {
       console.log("Invalid image! No image uploaded.");
       return;
     }
-    props.onAddImage(enteredLabel, enteredImage);
-    setEnteredLabel("");
-    // setEnteredImage(null);
-  };
-
-  const labelChangeHandler = (event) => {
-    setEnteredLabel(event.target.value);
+    props.onAddImage(enteredImage);
   };
 
   const imageChangeHandler = (event) => {
@@ -37,13 +25,6 @@ const AddImage = (props) => {
   return (
     <Card className={classes.input}>
       <form onSubmit={addUserHandler}>
-        <label htmlFor="Label">Label</label>
-        <input
-          id="Label"
-          type="text"
-          value={enteredLabel}
-          onChange={labelChangeHandler}
-        />
         <label htmlFor="image">Image</label>
         <input
           type="file"
@@ -53,6 +34,9 @@ const AddImage = (props) => {
           onChange={imageChangeHandler}
         />
         <Button type="submit">Add Image</Button>
+        <div>
+          <img src={enteredImage} alt=""></img>
+        </div>
       </form>
     </Card>
   );
