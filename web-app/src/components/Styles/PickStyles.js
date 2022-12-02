@@ -14,7 +14,21 @@ const PickStyles = (props) => {
     { styleLabel: "Style 3", styleImage: stickman },
   ];
 
+  const [styleList, setStyleList] = useState(options);
+
   const [styleImage, setStyleImage] = useState(vangogh);
+
+  const imageChangeHandler = (event) => {
+    setStyleList((prevStyleList) => {
+      return [
+        ...prevStyleList,
+        {
+          styleLabel: "Style 4",
+          styleImage: URL.createObjectURL(event.target.files[0]),
+        },
+      ];
+    });
+  };
 
   const styleImageChangeHandler = (event) => {
     console.log("event.target.value", event.target.value);
@@ -24,14 +38,26 @@ const PickStyles = (props) => {
 
   return (
     <Card className={classes.styles}>
-      <label>
-        Style
-        <select value={styleImage} onChange={styleImageChangeHandler}>
-          {options.map((option) => (
-            <option value={option.styleImage}>{option.styleLabel}</option>
-          ))}
-        </select>
-      </label>
+      <label htmlFor="selector"> Style</label>
+
+      <select
+        id="selector"
+        name="selector"
+        value={styleImage}
+        onChange={styleImageChangeHandler}
+      >
+        {styleList.map((option) => (
+          <option value={option.styleImage}>{option.styleLabel}</option>
+        ))}
+      </select>
+      <input
+        type="file"
+        id="image"
+        name="image"
+        accept="image/*"
+        onChange={imageChangeHandler}
+      />
+
       <img src={styleImage} alt="style" width="160" height="160" />
     </Card>
   );

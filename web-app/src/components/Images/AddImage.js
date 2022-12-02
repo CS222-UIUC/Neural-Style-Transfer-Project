@@ -19,7 +19,7 @@ const AddImage = (props) => {
 
   const imageChangeHandler = (event) => {
     setEnteredImage(URL.createObjectURL(event.target.files[0]));
-    console.log("here: ", enteredImage);
+    console.log("AddImage.js - here: ", enteredImage);
   };
 
   return (
@@ -33,10 +33,10 @@ const AddImage = (props) => {
           accept="image/*"
           onChange={imageChangeHandler}
         />
-        <Button type="submit">Add Image</Button>
         <div>
-          <img src={enteredImage} alt=""></img>
+          <img src={enteredImage} alt="uploaded" width="100" height="100"></img>
         </div>
+        <Button type="submit">Add Image</Button>
       </form>
     </Card>
   );
