@@ -25,9 +25,8 @@ const ImagesList = (props) => {
       <ul>
         {props.images.map((image) => (
           <li key={image.id}>
-            <label>{image.label}</label>
-            <img src={image.img} alt="current" width="100" height="100" />
-            <img src={image.style} alt="style" width="100" height="100" />
+            {/* <img src={image.img} alt="current" width="100" height="100" />
+            <img src={image.style} alt="style" width="100" height="100" /> */}
             <canvas id="canvas" ref={image.canvasRef}></canvas>
             <button onClick={downloadImage}>Download</button>
             <button
