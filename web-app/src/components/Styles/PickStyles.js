@@ -39,7 +39,6 @@ const PickStyles = (props) => {
   return (
     <Card className={classes.styles}>
       <label htmlFor="selector"> Style</label>
-
       <select
         id="selector"
         name="selector"
