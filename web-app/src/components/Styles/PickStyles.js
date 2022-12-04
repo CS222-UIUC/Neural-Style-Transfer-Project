@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Card from "../UI/Card.js";
 import classes from "./PickStyles.module.css";
+import Button from "../UI/Button.js";
 
 import vangogh from "./AllStyles/vangogh.png";
 import realism from "./AllStyles/realism.png";
@@ -19,15 +20,18 @@ const PickStyles = (props) => {
   const [styleImage, setStyleImage] = useState(vangogh);
 
   const imageChangeHandler = (event) => {
+    let url = URL.createObjectURL(event.target.files[0]);
     setStyleList((prevStyleList) => {
       return [
         ...prevStyleList,
         {
-          styleLabel: "Style 4",
-          styleImage: URL.createObjectURL(event.target.files[0]),
+          styleLabel: event.target.files[0].name,
+          styleImage: url,
         },
       ];
     });
+    setStyleImage(url);
+    props.onChangeStyle(url);
   };
 
   const styleImageChangeHandler = (event) => {
@@ -57,7 +61,7 @@ const PickStyles = (props) => {
         onChange={imageChangeHandler}
       />
 
-      <img src={styleImage} alt="style" width="160" height="160" />
+      <img src={styleImage} alt="style" width="200" height="200" />
     </Card>
   );
 };

@@ -22,7 +22,9 @@ function App() {
 
   const addImageHandler = async (newImg) => {
     let contentImage = await loadImage(newImg);
-    let styleImage = await loadImage("http://" + HOST_URL + style);
+    console.log("style: ", style);
+    // let styleImage = await loadImage("http://" + HOST_URL + style);
+    let styleImage = await loadImage(style);
 
     doStyleTransfer({
       contentImage: contentImage,
