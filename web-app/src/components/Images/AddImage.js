@@ -7,7 +7,7 @@ import classes from "./AddImage.module.css";
 const AddImage = (props) => {
   const [enteredImage, setEnteredImage] = useState(undefined);
 
-  const addUserHandler = (event) => {
+  const addImageHandler = (event) => {
     event.preventDefault();
 
     if (enteredImage === null) {
@@ -24,7 +24,7 @@ const AddImage = (props) => {
 
   return (
     <Card className={classes.input}>
-      <form onSubmit={addUserHandler}>
+      <form onSubmit={addImageHandler}>
         <label htmlFor="image">Content Image</label>
         <input
           type="file"

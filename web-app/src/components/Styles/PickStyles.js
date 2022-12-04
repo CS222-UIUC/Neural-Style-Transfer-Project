@@ -10,9 +10,9 @@ import stickman from "./AllStyles/stickman.png";
 
 const PickStyles = (props) => {
   const options = [
-    { styleLabel: "Style 1", styleImage: vangogh },
-    { styleLabel: "Style 2", styleImage: realism },
-    { styleLabel: "Style 3", styleImage: stickman },
+    { styleLabel: "Style 1: Van Gogh", styleImage: vangogh },
+    { styleLabel: "Style 2: Realism", styleImage: realism },
+    { styleLabel: "Style 3: Stickman", styleImage: stickman },
   ];
 
   const [styleList, setStyleList] = useState(options);
