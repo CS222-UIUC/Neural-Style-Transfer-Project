@@ -6,7 +6,7 @@ export const MenuItems = [
         icon: <i class = {'fa-solid fa-house'}></i>
     },
     {
-        title: ' Neural Style Transfer',
+        title: ' Transfer App',
         url: '#',
         cName: 'nav-links',
         icon: <i class="fa-solid fa-pencil"></i>

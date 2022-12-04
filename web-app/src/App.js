@@ -1,6 +1,6 @@
 import * as tf from "@tensorflow/tfjs";
 import React, { useEffect, useRef, useState } from "react";
-
+import { Parallax } from "react-parallax";
 import AddImage from "./components/Images/AddImage.js";
 import ImagesList from "./components/Images/ImagesList.js";
 import PickStyles from "./components/Styles/PickStyles.js";
@@ -9,6 +9,14 @@ import SocialNav from "./components/Socials/SocialNav.js";
 import NavBar from "./components/NavBar/Navbar.js";
 import classes from "./App.module.css";
 import vangogh from "./components/Styles/AllStyles/vangogh.png";
+import { div } from "@tensorflow/tfjs";
+//messing with Parallax
+import abstract from "./PNG/abstract.png";
+import galaxy from "./PNG/Galaxy.jpg";
+import Neural from "./PNG/Neural.jpeg";
+import butterfly from "./PNG/butterfly.mp4";
+import Blender from "./PNG/Blender.mp4";
+import Tunnel from "./PNG/Tunnel.mp4";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
@@ -53,7 +61,52 @@ function App() {
 
   return (
     <div className={classes.wrapper}>
-      <NavBar />
+      <Parallax strength={600}>
+        <video src={Tunnel} autoPlay loop muted />
+        <div className={"overlay"}>
+          <div className={"vid-content"}>
+            <h1> WELCOME </h1>
+            <p>TO NEURAL STYLE TRANSFER</p>
+          </div>
+        </div>
+      </Parallax>
+
+
+
+
+      {/* This is for the Transfer App Background */}
+      <div>
+        <Parallax strength={600}> bgImage = {galaxy}
+          <div className={"neural"}>
+            <div className={"text-content"}>Normal Parallax</div>
+          </div>
+        </Parallax>
+      </div>
+
+      {/* This is for Learn More Background */}
+      {/* <div>
+        <Parallax strength={600}> bgImage = {galaxy}
+          <div className={"neural"}>
+            <div className={"text-content"}>Normal Parallax</div>
+          </div>
+        </Parallax>
+      </div> */}
+
+
+      {/* This is for About Us Background */}
+      {/* <div>
+        <Parallax strength={600}> bgImage = {galaxy}
+          <div className={"neural"}>
+            <div className={"text-content"}>Normal Parallax</div>
+          </div>
+        </Parallax>
+      </div> */}
+
+
+      {/* This deals with the Nav Bar */}
+      <div className={"nav"}>
+        <NavBar />
+      </div>
 
       <div className={classes.control}>
         <AddImage onAddImage={addImageHandler} id="AddImage-component" />
