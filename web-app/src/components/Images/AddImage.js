@@ -34,7 +34,7 @@ const AddImage = (props) => {
           onChange={imageChangeHandler}
         />
         <div>
-          <img src={enteredImage} alt="uploaded" width="100" height="100"></img>
+          <img src={enteredImage} alt="" width="100" height="100"></img>
         </div>
         <Button type="submit">Add Image</Button>
       </form>

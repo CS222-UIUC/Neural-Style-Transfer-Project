@@ -6,6 +6,7 @@ import classes from "./PickStyles.module.css";
 import vangogh from "./AllStyles/vangogh.png";
 import realism from "./AllStyles/realism.png";
 import stickman from "./AllStyles/stickman.png";
+import { string } from "@tensorflow/tfjs";
 
 const PickStyles = (props) => {
   const options = [
@@ -19,15 +20,18 @@ const PickStyles = (props) => {
   const [styleImage, setStyleImage] = useState(vangogh);
 
   const imageChangeHandler = (event) => {
+    let url = URL.createObjectURL(event.target.files[0]);
     setStyleList((prevStyleList) => {
       return [
         ...prevStyleList,
         {
-          styleLabel: "Style 4",
-          styleImage: URL.createObjectURL(event.target.files[0]),
+          styleLabel: event.target.files[0].name,
+          styleImage: url,
         },
       ];
     });
+    setStyleImage(url);
+    props.onChangeStyle(url);
   };
 
   const styleImageChangeHandler = (event) => {
