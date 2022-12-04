@@ -1,0 +1,10 @@
+.label {
+  border: 2px solid indigo;
+  color: indigo;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}

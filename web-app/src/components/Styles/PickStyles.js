@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Card from "../UI/Card.js";
 import classes from "./PickStyles.module.css";
-import Button from "../UI/Button.js";
+import FileLoader from "../UI/FileLoader.js";
 
 import vangogh from "./AllStyles/vangogh.png";
 import realism from "./AllStyles/realism.png";
@@ -53,13 +53,8 @@ const PickStyles = (props) => {
           <option value={option.styleImage}>{option.styleLabel}</option>
         ))}
       </select>
-      <input
-        type="file"
-        id="image"
-        name="image"
-        accept="image/*"
-        onChange={imageChangeHandler}
-      />
+
+      <FileLoader onChange={imageChangeHandler}>Add Style</FileLoader>
 
       <img src={styleImage} alt="style" width="200" height="200" />
     </Card>

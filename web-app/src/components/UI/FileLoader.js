@@ -3,13 +3,19 @@ import classes from "./FileLoader.module.css";
 
 const FileLoader = (props) => {
   return (
-    <button
-      className={classes.button}
-      type={props.type || "button"}
-      onClick={props.onClick}
-    >
-      {props.children}
-    </button>
+    <div>
+      <input
+        type="file"
+        id="file-loader"
+        name="image"
+        accept="image/*"
+        onChange={props.onChange}
+        hidden
+      />
+      <label class={classes.label} for="file-loader">
+        {props.children}
+      </label>
+    </div>
   );
 };
 
