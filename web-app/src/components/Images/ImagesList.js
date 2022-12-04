@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../UI/Card.js";
 import classes from "./ImagesList.module.css";
-// import DownloadButton from "../Socials/Download.js";
+import Button from "../UI/Button.js";
 
 const ImagesList = (props) => {
   console.log(props.images);
@@ -18,7 +18,7 @@ const ImagesList = (props) => {
     a.download = "Image.png"; //File name Here
     a.click(); //Downloaded file
     console.log("Downloaded Image");
-  }
+  };
 
   return (
     <Card className={classes.images}>
@@ -27,15 +27,15 @@ const ImagesList = (props) => {
           <li key={image.id}>
             {/* <img src={image.img} alt="current" width="100" height="100" />
             <img src={image.style} alt="style" width="100" height="100" /> */}
-            <canvas id="canvas" ref={image.canvasRef}></canvas>
-            <button onClick={downloadImage}>Download</button>
-            <button
-              onClick={() => {
-                console.log("hello");
-              }}
-            >
-              Style
-            </button>
+            <canvas
+              id="canvas"
+              ref={image.canvasRef}
+              width="100"
+              height="100"
+            ></canvas>
+            <div>
+              <Button onClick={downloadImage}>Download</Button>
+            </div>
           </li>
         ))}
       </ul>

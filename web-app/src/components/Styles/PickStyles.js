@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 import Card from "../UI/Card.js";
 import classes from "./PickStyles.module.css";
+import Button from "../UI/Button.js";
 
 import vangogh from "./AllStyles/vangogh.png";
 import realism from "./AllStyles/realism.png";
 import stickman from "./AllStyles/stickman.png";
-import { string } from "@tensorflow/tfjs";
 
 const PickStyles = (props) => {
   const options = [
@@ -62,7 +62,7 @@ const PickStyles = (props) => {
         onChange={imageChangeHandler}
       />
 
-      <img src={styleImage} alt="style" width="160" height="160" />
+      <img src={styleImage} alt="style" width="200" height="200" />
     </Card>
   );
 };
