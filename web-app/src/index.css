@@ -5,7 +5,7 @@
 
 html {
   font-family: Arial, Helvetica, sans-serif;
-  background: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
 }
 
 
@@ -44,8 +44,21 @@ video {
 
 
 .neural{
-  height: 100vh;
+  height: 100vmax;
   width: 100%;
+}
+
+.text-content {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  padding: 5px 15px;
+  transform: translate(-50%, -50%);
+  background: rgb(0, 0, 0);
+  color: white;
+  border-radius: 20px;
+  font-size: 25px;
+
 }
 
  

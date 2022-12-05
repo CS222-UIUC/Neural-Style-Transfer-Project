@@ -9,7 +9,7 @@ import SocialNav from "./components/Socials/SocialNav.js";
 import NavBar from "./components/NavBar/Navbar.js";
 import classes from "./App.module.css";
 import vangogh from "./components/Styles/AllStyles/vangogh.png";
-import { div } from "@tensorflow/tfjs";
+import { abs, div } from "@tensorflow/tfjs";
 //messing with Parallax
 import abstract from "./PNG/abstract.png";
 import galaxy from "./PNG/Galaxy.jpg";
@@ -17,6 +17,8 @@ import Neural from "./PNG/Neural.jpeg";
 import butterfly from "./PNG/butterfly.mp4";
 import Blender from "./PNG/Blender.mp4";
 import Tunnel from "./PNG/Tunnel.mp4";
+import node from "./PNG/Nodes.gif"
+import space from "./PNG/space.gif"
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
@@ -77,9 +79,9 @@ function App() {
 
       {/* This is for the Transfer App Background */}
 
-        <Parallax strength={600}> bgImage = {galaxy}
+        <Parallax strength={600} bgImage = {abstract}>
           <div className={"neural"}>
-            <div className={"text-content"}>Normal Parallax</div>
+            <div className={"text-content"}>What is a Neural Network?</div>
           </div>
         </Parallax>
 
