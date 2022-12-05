@@ -10,6 +10,7 @@
 
 .control {
   display: flex;
+  flex-direction: row;
   gap: 20px;
   width: 100%;
   justify-content: center;
@@ -24,4 +25,3 @@
   padding: 20px 0;
   max-width: 50vw;
 }
-

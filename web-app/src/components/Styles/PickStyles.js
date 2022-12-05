@@ -19,19 +19,18 @@ const PickStyles = (props) => {
 
   const [styleImage, setStyleImage] = useState(vangogh);
 
-  const imageChangeHandler = (event) => {
-    let url = URL.createObjectURL(event.target.files[0]);
+  const imageChangeHandler = (file, filename) => {
     setStyleList((prevStyleList) => {
       return [
         ...prevStyleList,
         {
-          styleLabel: event.target.files[0].name,
-          styleImage: url,
+          styleLabel: filename,
+          styleImage: file,
         },
       ];
     });
-    setStyleImage(url);
-    props.onChangeStyle(url);
+    setStyleImage(file);
+    props.onChangeStyle(file);
   };
 
   const styleImageChangeHandler = (event) => {
@@ -54,7 +53,7 @@ const PickStyles = (props) => {
         ))}
       </select>
 
-      <FileLoader onChange={imageChangeHandler}>Add Style</FileLoader>
+      <FileLoader onChange={imageChangeHandler}>Upload Style</FileLoader>
 
       <img src={styleImage} alt="style" width="200" height="200" />
     </Card>

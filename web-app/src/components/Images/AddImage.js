@@ -16,6 +16,22 @@ const AddImage = (props) => {
     }
     props.onAddImage(enteredImage);
   };
+  // const addUserHandler = (event) => {
+  //   event.preventDefault();
+
+  //   if (enteredLabel.trim().length === 0) {
+  //     console.log("Invalid label!");
+  //     return;
+  //   }
+
+  //   if (enteredImage === null) {
+  //     console.log("Invalid image! No image uploaded.");
+  //     return;
+  //   }
+  //   props.onAddImage(enteredLabel, enteredImage);
+  //   setEnteredLabel("");
+  //   setEnteredImage(null);
+  // };
 
   const imageChangeHandler = (event) => {
     setEnteredImage(URL.createObjectURL(event.target.files[0]));

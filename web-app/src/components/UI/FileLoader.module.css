@@ -1,10 +1,20 @@
-.label {
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+.button {
+  /* cursor: pointer; */
+  padding: 0px 20px 0px;
   border: 2px solid indigo;
-  color: indigo;
-  background-color: white;
-  padding: 0.5rem;
-  border-radius: 8px;
+  background-color: indigo;
+}
+
+.label {
+  cursor: pointer;
   font-size: 15px;
   font-weight: bold;
-  cursor: pointer;
+  color: white;
 }
