@@ -109,49 +109,51 @@ function App() {
         </Parallax>
       </div>
 
-
       <Parallax strength={600}>
         <video src={Blender} autoPlay loop muted />
-        <div className={"overlay"}>
-          <div className={"vid-content"}>
-            <h1> WELCOME </h1>
-            <p>TO NEURAL STYLE TRANSFER</p>
+        <div className={"overlay2"}>
+          <div className={classes.wrapper}>
+            <div className={classes.control}>
+              <AddImage onAddImage={addImageHandler} id="AddImage-component" />
+              <PickStyles
+                onChangeStyle={changeStyleHandler}
+                data-testid="PickStyles-component"
+              />
+            </div>
+
+            <ImagesList
+              images={imagesList}
+              data-testid="ImagesList-component"
+            />
+
+            <SocialNav
+              id="SocialNav"
+              className={classes.bar}
+              open={open}
+              setOpen={() => setOpen(!open)}
+              items={items}
+            />
           </div>
         </div>
       </Parallax>
 
       {/* This is for About Us Background */}
-      {/* <div>
-        <Parallax strength={600}> bgImage = {galaxy}
+      <div>
+        <Parallax strength={600} blur={{min: -10, max: 15}} bgImage={galaxy}>
           <div className={"neural"}>
-            <div className={"text-content"}>Normal Parallax</div>
+            <div className={"text-content"}>About Us</div>
+            <div className={"learn-content"}>
+              <h2>Contributers:</h2>
+              <h3>Jacob Shalabi, Ritul K. Soni, Jacob Ko, Daniel Ku</h3>
+            </div>
           </div>
         </Parallax>
-      </div> */}
+      </div>
 
-      <div className={classes.wrapper}>
-        {/* This deals with the Nav Bar */}
-        <div className={"nav"}>
-          <NavBar />
-        </div>
+      {/* This deals with the Nav Bar */}
 
-        <div className={classes.control}>
-          <AddImage onAddImage={addImageHandler} id="AddImage-component" />
-          <PickStyles
-            onChangeStyle={changeStyleHandler}
-            data-testid="PickStyles-component"
-          />
-        </div>
-
-        <ImagesList images={imagesList} data-testid="ImagesList-component" />
-
-        <SocialNav
-          id="SocialNav"
-          className={classes.bar}
-          open={open}
-          setOpen={() => setOpen(!open)}
-          items={items}
-        />
+      <div className={"nav"}>
+        <NavBar />
       </div>
     </div>
   );
