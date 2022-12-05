@@ -60,7 +60,8 @@ function App() {
   };
 
   return (
-    <div className={classes.wrapper}>
+
+    <div className={"App"}>
       <Parallax strength={600}>
         <video src={Tunnel} autoPlay loop muted />
         <div className={"overlay"}>
@@ -75,13 +76,13 @@ function App() {
 
 
       {/* This is for the Transfer App Background */}
-      <div>
+
         <Parallax strength={600}> bgImage = {galaxy}
           <div className={"neural"}>
             <div className={"text-content"}>Normal Parallax</div>
           </div>
         </Parallax>
-      </div>
+
 
       {/* This is for Learn More Background */}
       {/* <div>
@@ -103,6 +104,7 @@ function App() {
       </div> */}
 
 
+      <div className={classes.wrapper}>
       {/* This deals with the Nav Bar */}
       <div className={"nav"}>
         <NavBar />
@@ -125,6 +127,7 @@ function App() {
         setOpen={() => setOpen(!open)}
         items={items}
       />
+    </div>
     </div>
   );
 }
