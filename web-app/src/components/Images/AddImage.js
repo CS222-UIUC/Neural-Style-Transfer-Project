@@ -7,7 +7,7 @@ import classes from "./AddImage.module.css";
 const AddImage = (props) => {
   const [enteredImage, setEnteredImage] = useState(undefined);
 
-  const addUserHandler = (event) => {
+  const addImageHandler = (event) => {
     event.preventDefault();
 
     if (enteredImage === null) {
@@ -19,13 +19,13 @@ const AddImage = (props) => {
 
   const imageChangeHandler = (event) => {
     setEnteredImage(URL.createObjectURL(event.target.files[0]));
-    console.log("here: ", enteredImage);
+    console.log("AddImage.js - here: ", enteredImage);
   };
 
   return (
     <Card className={classes.input}>
-      <form onSubmit={addUserHandler}>
-        <label htmlFor="image">Image</label>
+      <form onSubmit={addImageHandler}>
+        <label htmlFor="image">Content Image</label>
         <input
           type="file"
           id="image"
@@ -33,10 +33,10 @@ const AddImage = (props) => {
           accept="image/*"
           onChange={imageChangeHandler}
         />
-        <Button type="submit">Add Image</Button>
         <div>
-          <img src={enteredImage} alt=""></img>
+          <img src={enteredImage} alt="" width="200" height="200"></img>
         </div>
+        <Button type="submit">Add Image</Button>
       </form>
     </Card>
   );
