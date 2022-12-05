@@ -17,8 +17,8 @@ import Neural from "./PNG/Neural.jpeg";
 import butterfly from "./PNG/butterfly.mp4";
 import Blender from "./PNG/Blender.mp4";
 import Tunnel from "./PNG/Tunnel.mp4";
-import node from "./PNG/Nodes.gif"
-import space from "./PNG/space.gif"
+import node from "./PNG/Nodes.gif";
+import wavey from "./PNG/wavey.gif";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
@@ -62,7 +62,6 @@ function App() {
   };
 
   return (
-
     <div className={"App"}>
       <Parallax strength={600}>
         <video src={Tunnel} autoPlay loop muted />
@@ -74,27 +73,52 @@ function App() {
         </div>
       </Parallax>
 
-
-
+      {/* This is for Learn More Background */}
+      <Parallax strength={-600} bgImage={wavey}>
+        <div className={"neural"}>
+          <div className={"text-content"}>What is a Neural Network?</div>
+          <div className={"learn-content"}>
+            <h3>
+              Deep Neural Networks, a type of biologically inspired vision
+              models, have lately shown near-human performance in other
+              important visual perception domains including object and face
+              recognition.
+            </h3>
+          </div>
+        </div>
+      </Parallax>
 
       {/* This is for the Transfer App Background */}
 
-        <Parallax strength={600} bgImage = {abstract}>
+      <div>
+        <Parallax strength={-600} bgImage={abstract}>
           <div className={"neural"}>
-            <div className={"text-content"}>What is a Neural Network?</div>
+            <div className={"text-content"}>What is Neural Style Transfer?</div>
+            <div className={"learn-content"}>
+              <h3>
+                Using an optimization approach called neural style transfer, two
+                images—a content picture and a style reference image (such as a
+                piece of art by a well-known painter)—are combined to create an
+                output image that resembles the content image but is "painted"
+                in the manner of the style reference image.
+              </h3>
+
+              <h2>Let's Experience It Below </h2>
+            </div>
           </div>
         </Parallax>
+      </div>
 
 
-      {/* This is for Learn More Background */}
-      {/* <div>
-        <Parallax strength={600}> bgImage = {galaxy}
-          <div className={"neural"}>
-            <div className={"text-content"}>Normal Parallax</div>
+      <Parallax strength={600}>
+        <video src={Blender} autoPlay loop muted />
+        <div className={"overlay"}>
+          <div className={"vid-content"}>
+            <h1> WELCOME </h1>
+            <p>TO NEURAL STYLE TRANSFER</p>
           </div>
-        </Parallax>
-      </div> */}
-
+        </div>
+      </Parallax>
 
       {/* This is for About Us Background */}
       {/* <div>
@@ -105,31 +129,30 @@ function App() {
         </Parallax>
       </div> */}
 
-
       <div className={classes.wrapper}>
-      {/* This deals with the Nav Bar */}
-      <div className={"nav"}>
-        <NavBar />
-      </div>
+        {/* This deals with the Nav Bar */}
+        <div className={"nav"}>
+          <NavBar />
+        </div>
 
-      <div className={classes.control}>
-        <AddImage onAddImage={addImageHandler} id="AddImage-component" />
-        <PickStyles
-          onChangeStyle={changeStyleHandler}
-          data-testid="PickStyles-component"
+        <div className={classes.control}>
+          <AddImage onAddImage={addImageHandler} id="AddImage-component" />
+          <PickStyles
+            onChangeStyle={changeStyleHandler}
+            data-testid="PickStyles-component"
+          />
+        </div>
+
+        <ImagesList images={imagesList} data-testid="ImagesList-component" />
+
+        <SocialNav
+          id="SocialNav"
+          className={classes.bar}
+          open={open}
+          setOpen={() => setOpen(!open)}
+          items={items}
         />
       </div>
-
-      <ImagesList images={imagesList} data-testid="ImagesList-component" />
-
-      <SocialNav
-        id="SocialNav"
-        className={classes.bar}
-        open={open}
-        setOpen={() => setOpen(!open)}
-        items={items}
-      />
-    </div>
     </div>
   );
 }
