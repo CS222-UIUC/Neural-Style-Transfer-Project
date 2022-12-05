@@ -7,19 +7,20 @@ import classes from "./SocialBar.module.css";
 
 const SocialBar = () => {
     const Url = window.location.href;
+    const shareURL = 'https://courses.engr.illinois.edu/cs225/fa2022/';
 
     return (
         <div className={classes.back}>
             <div className={classes.bar}>
-                <TwitterShareButton url={Url} title="Look at my cool picture!" id="button twitter">
+                <TwitterShareButton url={Url} title="Checkout this Neural Style Transfer Website!" id="button twitter">
 
                     <TwitterIcon size={30} round={true}/>
                 </TwitterShareButton>
-                <FacebookShareButton url={Url} quote="Look at my cool picture!" id="button facebook">
+                <FacebookShareButton url={shareURL} quote="Checkout this Neural Style Transfer Website" id="button facebook">
 
                     <FacebookIcon size={30} round={true}/>
                 </FacebookShareButton>
-                <EmailShareButton url={Url} id="button email">
+                <EmailShareButton url={Url} subject="Look at this website!" body="Checkout this Neural Style Transfer Website" id="button email">
 
                     <EmailIcon size={30} round={true}/>
                 </EmailShareButton>
