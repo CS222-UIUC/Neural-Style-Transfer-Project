@@ -80,22 +80,22 @@ function App() {
       </Parallax>
 
       {/* This is for Learn More Background */}
-      <Parallax strength={-600} bgImage={wavey}>
-        <div className={"neural"}>
-          <div className={"text-content"}>What is a Neural Network?</div>
-          <div className={"learn-content"}>
-            <h3>
-              Deep Neural Networks, a type of biologically inspired vision
-              models, have lately shown near-human performance in other
-              important visual perception domains including object and face
-              recognition.
-            </h3>
+      <section id="Learn-More">
+        <Parallax strength={-600} bgImage={wavey}>
+          <div className={"neural"}>
+            <div className={"text-content"}>What is a Neural Network?</div>
+            <div className={"learn-content"}>
+              <h3>
+                Deep Neural Networks, a type of biologically inspired vision
+                models, have lately shown near-human performance in other
+                important visual perception domains including object and face
+                recognition.
+              </h3>
+            </div>
           </div>
-        </div>
-      </Parallax>
+        </Parallax>
 
-      {/* This is for the Transfer App Background */}
-      <section id="Learn More">
+        {/* This is for the Transfer App Background */}
         <div>
           <Parallax strength={-600} bgImage={abstract}>
             <div className={"neural"}>

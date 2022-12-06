@@ -7,19 +7,19 @@ export const MenuItems = [
   },
   {
     title: " Transfer App",
-    url: "#",
+    url: "#actual-app",
     cName: "nav-links",
     icon: <i class="fa-solid fa-pencil"></i>,
   },
   {
     title: "Learn More",
-    url: "#test",
+    url: "#Learn-More",
     cName: "nav-links",
     icon: <i class="fa-solid fa-book"></i>,
   },
   {
     title: "About Us",
-    url: "#",
+    url: "#about-us",
     cName: "nav-links",
     icon: <i class="fa-solid fa-people-group"></i>,
   },
