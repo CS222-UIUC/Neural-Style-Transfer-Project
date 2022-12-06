@@ -7,12 +7,13 @@ import FileLoader from "../UI/FileLoader.js";
 import vangogh from "./AllStyles/vangogh.png";
 import realism from "./AllStyles/realism.png";
 import stickman from "./AllStyles/stickman.png";
+import seaport from "./AllStyles/seaport.jpg";
 
 const PickStyles = (props) => {
   const options = [
     { styleLabel: "Style 1: Van Gogh", styleImage: vangogh },
     { styleLabel: "Style 2: Realism", styleImage: realism },
-    { styleLabel: "Style 3: Stickman", styleImage: stickman },
+    { styleLabel: "Style 3: Seaport", styleImage: seaport },
   ];
 
   const [styleList, setStyleList] = useState(options);
