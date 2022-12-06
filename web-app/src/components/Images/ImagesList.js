@@ -33,7 +33,12 @@ const ImagesList = (props) => {
             ></canvas>
             <div>
               <Button
-                onClick={() => downloadImage(index, `stylized${index + 1}`)}
+                onClick={() =>
+                  downloadImage(
+                    index,
+                    `stylized${props.images.length - (index + 1)}`
+                  )
+                }
               >
                 Download
               </Button>
