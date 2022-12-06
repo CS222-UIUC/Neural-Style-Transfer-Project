@@ -9,9 +9,9 @@ import pikachu from "./Default/50pikachu.jpeg";
 
 const AddImage = (props) => {
   const [imageList, setImageList] = useState([
-    { imageLabel: "Image 1: Pikachu", image: pikachu },
+    // { imageLabel: "Image 1: Pikachu", image: pikachu },
   ]);
-  const [enteredImage, setEnteredImage] = useState(pikachu);
+  const [enteredImage, setEnteredImage] = useState(null);
 
   const addImageHandler = (event) => {
     event.preventDefault();

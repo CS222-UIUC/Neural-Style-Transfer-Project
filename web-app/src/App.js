@@ -95,71 +95,84 @@ function App() {
       </Parallax>
 
       {/* This is for the Transfer App Background */}
+      <section id="Learn More">
+        <div>
+          <Parallax strength={-600} bgImage={abstract}>
+            <div className={"neural"}>
+              <div className={"text-content"}>
+                What is Neural Style Transfer?
+              </div>
+              <div className={"learn-content"}>
+                <h3>
+                  Using an optimization approach called neural style transfer,
+                  two images—a content picture and a style reference image (such
+                  as a piece of art by a well-known painter)—are combined to
+                  create an output image that resembles the content image but is
+                  "painted" in the manner of the style reference image.
+                </h3>
 
-      <div>
-        <Parallax strength={-600} bgImage={abstract}>
-          <div className={"neural"}>
-            <div className={"text-content"}>What is Neural Style Transfer?</div>
-            <div className={"learn-content"}>
-              <h3>
-                Using an optimization approach called neural style transfer, two
-                images—a content picture and a style reference image (such as a
-                piece of art by a well-known painter)—are combined to create an
-                output image that resembles the content image but is "painted"
-                in the manner of the style reference image.
-              </h3>
-
-              <h2>Let's Experience It Below </h2>
+                <h2>Let's Experience It Below </h2>
+              </div>
             </div>
-          </div>
-        </Parallax>
-      </div>
-
-      <Parallax strength={600}>
-        <div className={"blenderfix"}>
-        <video src={Blender} autoPlay loop muted />
+          </Parallax>
         </div>
-        <div className={"overlay2"}>
-          <div className={classes.wrapper}>
-            <div className={classes.control}>
-              <AddImage onAddImage={addImageHandler} id="AddImage-component" />
-              <PickStyles
-                onChangeStyle={changeStyleHandler}
-                data-testid="PickStyles-component"
+      </section>
+      <section id="actual-app">
+        <Parallax strength={600}>
+          <div className={"blenderfix"}>
+            <video src={Blender} autoPlay loop muted />
+          </div>
+          <div className={"overlay2"}>
+            <div className={classes.wrapper}>
+              <div className={classes.control}>
+                <AddImage
+                  onAddImage={addImageHandler}
+                  id="AddImage-component"
+                />
+                <PickStyles
+                  onChangeStyle={changeStyleHandler}
+                  data-testid="PickStyles-component"
+                />
+              </div>
+              <div className={classes.loadingIcon}>
+                {isStyling ? <LoadingIcons.Oval /> : ""}
+              </div>
+
+              <ImagesList
+                images={imagesList}
+                data-testid="ImagesList-component"
+              />
+
+              <SocialNav
+                id="SocialNav"
+                className={classes.bar}
+                open={open}
+                setOpen={() => setOpen(!open)}
+                items={items}
               />
             </div>
-      <div className={classes.loadingIcon}>
-        {isStyling ? <LoadingIcons.Oval /> : ""}
-      </div>
-
-            <ImagesList
-              images={imagesList}
-              data-testid="ImagesList-component"
-            />
-
-            <SocialNav
-              id="SocialNav"
-              className={classes.bar}
-              open={open}
-              setOpen={() => setOpen(!open)}
-              items={items}
-            />
-          </div>
-        </div>
-      </Parallax>
-
-      {/* This is for About Us Background */}
-      <div>
-        <Parallax strength={600} blur={{min: -10, max: 15}} bgImage={galaxy}>
-          <div className={"neural"}>
-            <div className={"text-content"}>About Us</div>
-            <div className={"learn-content"}>
-              <h2>Contributers:</h2>
-              <h3>Jacob Shalabi, Ritul K. Soni, Jacob Ko, Daniel Ku</h3>
-            </div>
           </div>
         </Parallax>
-      </div>
+      </section>
+
+      {/* This is for About Us Background */}
+      <section id="about-us">
+        <div>
+          <Parallax
+            strength={600}
+            blur={{ min: -10, max: 15 }}
+            bgImage={galaxy}
+          >
+            <div className={"neural"}>
+              <div className={"text-content"}>About Us</div>
+              <div className={"learn-content"}>
+                <h2>Contributers:</h2>
+                <h3>Jacob Shalabi, Ritul K. Soni, Jacob Ko, Daniel Ku</h3>
+              </div>
+            </div>
+          </Parallax>
+        </div>
+      </section>
 
       {/* This deals with the Nav Bar */}
 
