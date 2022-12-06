@@ -6,16 +6,16 @@ import Button from "../UI/Button.js";
 const ImagesList = (props) => {
   console.log(props.images);
 
-  const downloadImage = () => {
+  const downloadImage = (canvasID, downloadName) => {
     // Get canvas element
-    let canvas = document.getElementById("canvas");
+    let canvas = document.getElementById(canvasID);
 
     // Image URL in Base64 (error when trying to download)
     var image = canvas.toDataURL("image/png");
 
     var a = document.createElement("a"); //Create <a>
     a.href = image; //Image Base64 Goes here
-    a.download = "Image.png"; //File name Here
+    a.download = downloadName; //File name Here
     a.click(); //Downloaded file
     console.log("Downloaded Image");
   };
@@ -23,18 +23,20 @@ const ImagesList = (props) => {
   return (
     <Card className={classes.images}>
       <ul>
-        {props.images.map((image) => (
+        {props.images.map((image, index) => (
           <li key={image.id}>
-            {/* <img src={image.img} alt="current" width="100" height="100" />
-            <img src={image.style} alt="style" width="100" height="100" /> */}
             <canvas
-              id="canvas"
+              id={index}
               ref={image.canvasRef}
               width="100"
               height="100"
             ></canvas>
             <div>
-              <Button onClick={downloadImage}>Download</Button>
+              <Button
+                onClick={() => downloadImage(index, `stylized${index + 1}`)}
+              >
+                Download
+              </Button>
             </div>
           </li>
         ))}

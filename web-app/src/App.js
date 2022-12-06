@@ -9,6 +9,7 @@ import SocialNav from "./components/Socials/SocialNav.js";
 import NavBar from "./components/NavBar/Navbar.js";
 import classes from "./App.module.css";
 import vangogh from "./components/Styles/AllStyles/vangogh.png";
+import LoadingIcons from "react-loading-icons";
 import { abs, div } from "@tensorflow/tfjs";
 //messing with Parallax
 import abstract from "./PNG/abstract.png";
@@ -24,6 +25,7 @@ function App() {
   const [imagesList, setImagesList] = useState([]);
   const [style, setStyle] = useState(vangogh);
   const [open, setOpen] = useState(false);
+  const [isStyling, setIsStyling] = useState(false);
   const items = [<SocialBar />];
 
   const canvasRef = useRef(null);
@@ -32,26 +34,30 @@ function App() {
 
   const addImageHandler = async (newImg) => {
     let contentImage = await loadImage(newImg);
-    console.log("style: ", style);
     // let styleImage = await loadImage("http://" + HOST_URL + style);
     let styleImage = await loadImage(style);
 
-    doStyleTransfer({
+    setIsStyling(true);
+    await getOutputStylization({
       contentImage: contentImage,
       styleImage: styleImage,
-      outputRef: canvasRef,
-    });
+    }).then((outputImage) => {
+      setIsStyling(false);
+      console.log("outputImage: ", outputImage);
+      let newImage = {
+        img: newImg,
+        style: style,
+        id: Math.random().toString(),
+        canvasRef: canvasRef,
+      };
 
-    setImagesList((prevImagesList) => {
-      return [
-        ...prevImagesList,
-        {
-          img: newImg,
-          style: style,
-          id: Math.random().toString(),
-          canvasRef: canvasRef,
-        },
-      ];
+      setImagesList((prevImagesList) => {
+        return [...prevImagesList, newImage];
+      });
+      setTimeout(
+        () => drawToCanvas({ toDraw: outputImage, canvasRef: canvasRef }),
+        0
+      );
     });
   };
 
@@ -120,6 +126,9 @@ function App() {
                 data-testid="PickStyles-component"
               />
             </div>
+      <div className={classes.loadingIcon}>
+        {isStyling ? <LoadingIcons.Oval /> : ""}
+      </div>
 
             <ImagesList
               images={imagesList}
@@ -222,4 +231,39 @@ async function doStyleTransfer({ contentImage, styleImage, outputRef }) {
     return;
   }
   tf.browser.toPixels(outputImage, canvas);
+}
+
+async function getOutputStylization({ contentImage, styleImage }) {
+  console.log("Inside getOutputStylization");
+  const model = await loadModel();
+
+  console.log("contentImage: ", contentImage);
+  console.log("styleImage: ", styleImage);
+
+  // Process images as tensors
+  let contentImageTensor = preprocess(contentImage);
+  let styleImageTensor = preprocess(styleImage);
+
+  console.log("t1: ", contentImageTensor);
+  console.log("t2: ", styleImageTensor);
+
+  // Pass images through model to train
+  let result = model.execute([contentImageTensor, styleImageTensor]);
+
+  // Remove extra dimension from batched result
+  let outputImage = tf.squeeze(result);
+
+  console.log("outputImage: ", outputImage);
+  return outputImage;
+}
+
+async function drawToCanvas({ toDraw, canvasRef }) {
+  console.log("Inside drawToCanvas");
+  console.log("toDraw: ", toDraw);
+  let canvas = canvasRef.current;
+  if (canvas == null) {
+    console.log("CANVAS DOES NOT EXIST");
+    return;
+  }
+  tf.browser.toPixels(toDraw, canvas);
 }
