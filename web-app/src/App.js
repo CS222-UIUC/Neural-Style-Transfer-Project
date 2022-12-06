@@ -52,7 +52,7 @@ function App() {
       };
 
       setImagesList((prevImagesList) => {
-        return [...prevImagesList, newImage];
+        return [newImage, ...prevImagesList];
       });
       setTimeout(
         () => drawToCanvas({ toDraw: outputImage, canvasRef: canvasRef }),

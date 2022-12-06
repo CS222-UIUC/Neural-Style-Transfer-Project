@@ -15,7 +15,7 @@ app.use(
 app.use("/api/content", express.static(path.join(__dirname, "content")));
 
 app.get("/api", (req, res) => {
-  res.json({ message: "Backend query received." });
+  res.json({ message: "Backend query received" });
 });
 
 app.listen(PORT, () => {

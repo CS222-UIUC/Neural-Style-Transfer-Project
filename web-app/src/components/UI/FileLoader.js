@@ -6,13 +6,14 @@ const FileLoader = (props) => {
     <div>
       <input
         type="file"
-        id="file-loader"
-        name="image"
+        id={props.id}
+        name="133"
         accept="image/*"
+        class={classes.input}
         onChange={props.onChange}
         hidden
       />
-      <label class={classes.label} for="file-loader">
+      <label class={classes.label} htmlFor={props.id}>
         {props.children}
       </label>
     </div>

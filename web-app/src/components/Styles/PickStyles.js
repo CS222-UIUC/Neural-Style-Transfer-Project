@@ -19,7 +19,7 @@ const PickStyles = (props) => {
 
   const [styleImage, setStyleImage] = useState(vangogh);
 
-  const imageChangeHandler = (event) => {
+  const styleListChangeHandler = (event) => {
     let url = URL.createObjectURL(event.target.files[0]);
     setStyleList((prevStyleList) => {
       return [
@@ -34,27 +34,29 @@ const PickStyles = (props) => {
     props.onChangeStyle(url);
   };
 
-  const styleImageChangeHandler = (event) => {
-    console.log("event.target.value", event.target.value);
+  const styleChangeHandler = (event) => {
+    // console.log("event.target.value", event.target.value);
     setStyleImage(event.target.value);
     props.onChangeStyle(event.target.value);
   };
 
   return (
     <Card className={classes.styles}>
-      <label htmlFor="selector"> Style</label>
+      <label htmlFor="selector"> Styles</label>
       <select
         id="selector"
         name="selector"
         value={styleImage}
-        onChange={styleImageChangeHandler}
+        onChange={styleChangeHandler}
       >
         {styleList.map((option) => (
           <option value={option.styleImage}>{option.styleLabel}</option>
         ))}
       </select>
 
-      <FileLoader onChange={imageChangeHandler}>Add Style</FileLoader>
+      <FileLoader id="fl1" onChange={styleListChangeHandler}>
+        Upload Style
+      </FileLoader>
 
       <img src={styleImage} alt="style" width="200" height="200" />
     </Card>
