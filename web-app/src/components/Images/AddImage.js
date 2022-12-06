@@ -45,7 +45,7 @@ const AddImage = (props) => {
   return (
     <Card className={classes.styles}>
       <form onSubmit={addImageHandler}>
-        <label>Content Image</label>
+        <label>Content Images</label>
         <select
           id="selector"
           name="selector"
@@ -62,7 +62,7 @@ const AddImage = (props) => {
         </FileLoader>
         <img src={enteredImage} alt="" width="200" height="200"></img>
 
-        <Button type="submit">Create Image</Button>
+        <Button type="submit">Create Stylized Image</Button>
       </form>
     </Card>
   );
