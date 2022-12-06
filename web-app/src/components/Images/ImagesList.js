@@ -28,8 +28,8 @@ const ImagesList = (props) => {
             <canvas
               id={index}
               ref={image.canvasRef}
-              width="100"
-              height="100"
+              width="150"
+              height="150"
             ></canvas>
             <div>
               <Button

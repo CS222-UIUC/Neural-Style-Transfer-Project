@@ -2,8 +2,11 @@
   border: 2px solid indigo;
   color: indigo;
   background-color: white;
-  padding: 0.5rem;
+  padding: 0.1rem;
+  width: 50%;
+  text-align: center;
   border-radius: 8px;
+  font: inherit;
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
