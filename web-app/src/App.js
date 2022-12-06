@@ -1,6 +1,6 @@
 import * as tf from "@tensorflow/tfjs";
 import React, { useEffect, useRef, useState } from "react";
-
+import { Parallax } from "react-parallax";
 import AddImage from "./components/Images/AddImage.js";
 import ImagesList from "./components/Images/ImagesList.js";
 import PickStyles from "./components/Styles/PickStyles.js";
@@ -10,6 +10,16 @@ import NavBar from "./components/NavBar/Navbar.js";
 import classes from "./App.module.css";
 import vangogh from "./components/Styles/AllStyles/vangogh.png";
 import LoadingIcons from "react-loading-icons";
+import { abs, div } from "@tensorflow/tfjs";
+//messing with Parallax
+import abstract from "./PNG/abstract.png";
+import galaxy from "./PNG/Galaxy.jpg";
+import Neural from "./PNG/Neural.jpeg";
+import butterfly from "./PNG/butterfly.mp4";
+import Blender from "./PNG/Blender.mp4";
+import Tunnel from "./PNG/Tunnel.mp4";
+import node from "./PNG/Nodes.gif";
+import wavey from "./PNG/wavey.gif";
 
 function App() {
   const [imagesList, setImagesList] = useState([]);
@@ -58,29 +68,102 @@ function App() {
   };
 
   return (
-    <div className={classes.wrapper}>
-      <NavBar />
+    <div className={"App"}>
+      <Parallax strength={600}>
+        <video src={Tunnel} autoPlay loop muted />
+        <div className={"overlay"}>
+          <div className={"vid-content"}>
+            <h1> WELCOME </h1>
+            <p>TO NEURAL STYLE TRANSFER</p>
+          </div>
+        </div>
+      </Parallax>
 
-      <div className={classes.control}>
-        <AddImage onAddImage={addImageHandler} id="AddImage-component" />
-        <PickStyles
-          onChangeStyle={changeStyleHandler}
-          data-testid="PickStyles-component"
-        />
+      {/* This is for Learn More Background */}
+      <Parallax strength={-600} bgImage={wavey}>
+        <div className={"neural"}>
+          <div className={"text-content"}>What is a Neural Network?</div>
+          <div className={"learn-content"}>
+            <h3>
+              Deep Neural Networks, a type of biologically inspired vision
+              models, have lately shown near-human performance in other
+              important visual perception domains including object and face
+              recognition.
+            </h3>
+          </div>
+        </div>
+      </Parallax>
+
+      {/* This is for the Transfer App Background */}
+
+      <div>
+        <Parallax strength={-600} bgImage={abstract}>
+          <div className={"neural"}>
+            <div className={"text-content"}>What is Neural Style Transfer?</div>
+            <div className={"learn-content"}>
+              <h3>
+                Using an optimization approach called neural style transfer, two
+                images—a content picture and a style reference image (such as a
+                piece of art by a well-known painter)—are combined to create an
+                output image that resembles the content image but is "painted"
+                in the manner of the style reference image.
+              </h3>
+
+              <h2>Let's Experience It Below </h2>
+            </div>
+          </div>
+        </Parallax>
       </div>
+
+      <Parallax strength={600}>
+        <video src={Blender} autoPlay loop muted />
+        <div className={"overlay2"}>
+          <div className={classes.wrapper}>
+            <div className={classes.control}>
+              <AddImage onAddImage={addImageHandler} id="AddImage-component" />
+              <PickStyles
+                onChangeStyle={changeStyleHandler}
+                data-testid="PickStyles-component"
+              />
+            </div>
       <div className={classes.loadingIcon}>
         {isStyling ? <LoadingIcons.Oval /> : ""}
       </div>
 
-      <ImagesList images={imagesList} data-testid="ImagesList-component" />
+            <ImagesList
+              images={imagesList}
+              data-testid="ImagesList-component"
+            />
 
-      <SocialNav
-        id="SocialNav"
-        className={classes.bar}
-        open={open}
-        setOpen={() => setOpen(!open)}
-        items={items}
-      />
+            <SocialNav
+              id="SocialNav"
+              className={classes.bar}
+              open={open}
+              setOpen={() => setOpen(!open)}
+              items={items}
+            />
+          </div>
+        </div>
+      </Parallax>
+
+      {/* This is for About Us Background */}
+      <div>
+        <Parallax strength={600} blur={{min: -10, max: 15}} bgImage={galaxy}>
+          <div className={"neural"}>
+            <div className={"text-content"}>About Us</div>
+            <div className={"learn-content"}>
+              <h2>Contributers:</h2>
+              <h3>Jacob Shalabi, Ritul K. Soni, Jacob Ko, Daniel Ku</h3>
+            </div>
+          </div>
+        </Parallax>
+      </div>
+
+      {/* This deals with the Nav Bar */}
+
+      <div className={"nav"}>
+        <NavBar />
+      </div>
     </div>
   );
 }

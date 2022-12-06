@@ -7,7 +7,7 @@
     font-size: 1.2rem;
 }
 .navbar-logo {
-    color: rgb(76, 85, 255);
+    color: rgb(255, 255, 255);
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
@@ -29,18 +29,18 @@
 }
 
 .nav-links {
-    color: rgb(76, 85, 255);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
 
 .nav-links:hover {
-    background-color: #6d76f7;
+    background-color: #04042d;
     border-radius: 4px;
     transition: all 0.2s ease-out;
 }
 .fa-bars { 
-    color: #fff;
+    color: rgb(255, 255, 255);
 }
 
 .menu-icon {
@@ -64,7 +64,7 @@
         transition: all 0.5s ease;
     }
     .nav-menu.active {
-        background: #6667f4;
+        background: #ffffff;
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
