@@ -116,7 +116,9 @@ function App() {
       </div>
 
       <Parallax strength={600}>
+        <div className={"blenderfix"}>
         <video src={Blender} autoPlay loop muted />
+        </div>
         <div className={"overlay2"}>
           <div className={classes.wrapper}>
             <div className={classes.control}>
