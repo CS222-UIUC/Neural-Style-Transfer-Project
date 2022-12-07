@@ -33,13 +33,13 @@ Users are able to upload a picture to our web app which is processed and an outp
 ## About the Project
 
 
-Users are able to upload a picture to our web app which is processed and an output image is provided of the given picture that is rendered in the painting styles that are chosen. These styles will be chosen by the user, either by selecting from a bank of different artistic renditions or potentially by listing mood keywords that match the desired outcome. The users will then be able to save the picture or have the option to share it on social media. 
+User uploads a content image (base image) and a style image (containing the style to convert base image). Our deployed neural style transfer model draws out the stylized image to a canvas from which the user can then download it as a image. Users can repeat this process to add multiple stylizations to a list where they can view previous outputs. Users can also scroll through some brief information on Neural Networks and Deep Learning throughout the page.
 
-### Introduction
+### Motivation
 
-Our project is a website allows you to apply a certain syle from an artist or image and "paint" it onto a base image that you can also choose. This process is called Neural Style Transfer and works by using a Deep Neural Network Model that is sources from TensorFlow
+The most prominent part of our application is that it allows users to upload arbitrary content and style images without the need to retrain the model each time it is run. There does exist alternative software that also performs arbitrary style transfer on user-uploaded images in the browser; however, there doesn’t yet exist a full-scale application that utilizes fast arbitrary style transfer directly on the front-end via a React.js program. This dynamic allows us to perform asynchronous tensorflow operations via the frontend, which will significantly improve the efficiency of tensor operations when rerendering components on the screen. Furthermore, our deployment of the model in tandem with the React javascript library allows us to utilize its improved state control and various libraries alongside our model’s API.
 
-Users of the website can scroll through some brief information on Neural Networks and Deep Learning until they scroll to the Style Transfer part of the app.
+
 
 
 
