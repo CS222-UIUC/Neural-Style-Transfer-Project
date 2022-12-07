@@ -76,7 +76,7 @@ Uses the React-Share Library. Role of the navigation bar is to allow users to ea
 Uses the standard ReactJS library. The role of the button is to allow the user to easily download the stylized image. The download button interacts with canvas element containing the stylized image to convert it to a downloadable png image. Main Contributors: Jacob K, Jacob S.
 
 ### Navigation Bar
-Using multiple components the Nav Bar was made to allow easy traversal of the website with a static bar. Using React's built in Routing feature and some CSS to make the scrolling smooth, clicking each button on the nav bar seamlessly scrolls you to the selected portion of the page. Main Contributors; Ritul Soni
+Using multiple components the Nav Bar was made to allow easy traversal of the website with a static bar. Using React's built in Routing feature and some CSS to make the scrolling smooth, clicking each button on the nav bar seamlessly scrolls you to the selected portion of the page. Main Contributors: Ritul Soni
 
 ###
 
