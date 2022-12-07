@@ -57,7 +57,24 @@ ADD HOW EACH COMPONENT OF THE WEBSITE WORKS TOGETHER
 
 
 ![image](images/ArchitectureDiagram.png)
-  
+
+### Express Server
+
+We utilize an Express.js backend to run our server-side functionality which statically serves the model from our local machines to the backend API, which is to be fetched later from our frontend application. Having this backend is necessary for our application because unfortunately React does not support the traditional inclusion of tensorflow js via vanilla JS script tags, so our workaround is to deploy the model JSON onto a server and access it from there.
+
+### Style Transfer Model
+
+Used tensorflowjs_converter to convert Google’s arbitrary image stylization model from a Keras model to tensorflow.js. After model is successfully loaded, it can be called by the user by selecting images to actually perform a stylization. Once it is called, the content and style images are passed into the model as tensors, and after the process is executed, the output image is drawn onto a canvas to be displayed in our ImageList component.
+
+### Social Navigation Bar
+
+Uses the React-Share Library. Role of the navigation bar is to allow users to easily share the website with other people via social media (Twitter, Facebook, Email). Does not directly interact with other components of the application, but it does keep track of the website url which it incorporates into a default message. Main Contributors: Jacob K.
+
+### Download Button
+
+Uses the standard ReactJS library. The role of the button is to allow the user to easily download the stylized image. The download button interacts with canvas element containing the stylized image to convert it to a downloadable png image. Main Contributors: Jacob K, Jacob S.
+
+###
 
 ## Installation and Usage
 
