@@ -73,7 +73,7 @@ Uses the React-Share Library. Role of the navigation bar is to allow users to ea
 
 ### Download Button
 
-Uses the standard ReactJS library. The role of the button is to allow the user to easily download the stylized image. The download button interacts with canvas element containing the stylized image to convert it to a downloadable png image. 
+Uses the standard ReactJS library for its implementation. The role of the button is to allow the user to easily download the stylized image. The download button interacts with canvas element containing the stylized image to convert it to a downloadable png image. 
 Main Contributors: Jacob K, Jacob S.
 
 ### Navigation Bar
