@@ -57,6 +57,7 @@ Our project utilizes React with JavaScript frontend, Express as a backend, and T
 ![image](images/ArchitectureDiagram.png)
 
 ### Backend
+***
 
 #### Express Server
 
@@ -69,6 +70,7 @@ Used tensorflowjs_converter to convert Google’s arbitrary image stylization mo
 Main Contributors: Jacob S.
 
 ### Frontend
+***
 
 #### Image Uploaders
 Allows users to upload an image for it to be displayed in a preview. Uploaded images are then available for selection in a dropdown menu. Uploaders are used for both content and style images.
