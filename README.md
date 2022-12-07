@@ -45,20 +45,11 @@ Users of the website can scroll through some brief information on Neural Network
 
 
 
-## Components
-
-### Diagram
-
-
-![image](images/ArchitectureDiagram.png)
 ## Technical Architecture
 
 [![React][React.js]][React-url] [![JavaScript][JavaScript]][JavaScript-url] [![TensorFlowJs][TensorFlowJS]][TensorFlowJS-url]
 
 Our project utilizes React with JavaScript frontend, Express as a backend, and TensorFlowJS for the model.
-
-
-## Components
 
 ### Diagram
 
