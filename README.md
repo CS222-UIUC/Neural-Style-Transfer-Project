@@ -67,7 +67,8 @@ Our project utilizes React with JavaScript frontend, Express as a backend, and T
 
 ### Express Server
 
-We utilize an Express.js backend to run our server-side functionality which statically serves the model from our local machines to the backend API, which is to be fetched later from our frontend application. Having this backend is necessary for our application because unfortunately React does not support the traditional inclusion of tensorflow js via vanilla JS script tags, so our workaround is to deploy the model JSON onto a server and access it from there. Main Contributors: Jacob S.
+We utilize an Express.js backend to run our server-side functionality which statically serves the model from our local machines to the backend API, which is to be fetched later from our frontend application. Having this backend is necessary for our application because unfortunately React does not support the traditional inclusion of tensorflow js via vanilla JS script tags, so our workaround is to deploy the model JSON onto a server and access it from there. 
+Main Contributors: Jacob S.
 
 ### Style Transfer Model
 
@@ -75,11 +76,13 @@ Used tensorflowjs_converter to convert Google’s arbitrary image stylization mo
 Main Contributors: Jacob S.
 
 ### Style Transfer App
-The frontend look and usability of the Style Transfer model is the app. There is one box where the user can upload their own image or choose from a preselected list as a base image, and there is another box where the user again has the same options but this time for the style. The box at the bottom then outputs the created image once it has been processed. Main Contributors: Daniel Ku
+The frontend look and usability of the Style Transfer model is the app. There is one box where the user can upload their own image or choose from a preselected list as a base image, and there is another box where the user again has the same options but this time for the style. The box at the bottom then outputs the created image once it has been processed. 
+Main Contributors: Daniel Ku
 
 ### Social Navigation Bar
 
-Uses the React-Share Library. Role of the navigation bar is to allow users to easily share the website with other people via social media (Twitter, Facebook, Email). Does not directly interact with other components of the application, but it does keep track of the website url which it incorporates into a default message. Main Contributors: Jacob K.
+Uses the React-Share Library. Role of the navigation bar is to allow users to easily share the website with other people via social media (Twitter, Facebook, Email). Does not directly interact with other components of the application, but it does keep track of the website url which it incorporates into a default message. 
+Main Contributors: Jacob K.
 
 ### Download Button
 
@@ -87,9 +90,8 @@ Uses the standard ReactJS library for its implementation. The role of the button
 Main Contributors: Jacob K, Jacob S.
 
 ### Navigation Bar
-Using multiple components the Nav Bar was made to allow easy traversal of the website with a static bar. Using React's built in Routing feature and some CSS to make the scrolling smooth, clicking each button on the nav bar seamlessly scrolls you to the selected portion of the page. Main Contributors: Ritul Soni
-
-###
+Using multiple components the Nav Bar was made to allow easy traversal of the website with a static bar. Using React's built in Routing feature and some CSS to make the scrolling smooth, clicking each button on the nav bar seamlessly scrolls you to the selected portion of the page. 
+Main Contributors: Ritul Soni
 
 ## Installation and Usage
 
