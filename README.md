@@ -128,7 +128,7 @@ Main Contributors: Ritul Soni
 
 ## Group Members and Their Roles
 
-[Jacob Shalabi](https://github.com/jshalabi03) worked with creating a backend server to host our tensorflow model that applies the styles onto the image. He created the model from that was in JavaScript to be compatible with react. Jacob also worked on many crucial functions such as
+[Jacob Shalabi](https://github.com/jshalabi03) worked with creating a backend server to host our tensorflow model that applies the styles onto the image. He converted the model from Python to Javascript and deployed it to our backend API via Express. Jacob also worked on many crucial functions such as canvas element download functionality and asynchronous image loading.
 
 [Ritul K. Soni](https://github.com/RitulSoni) created the Nav Bar that redirects users to portions of the single page website. He also worked with Parallax implementing aesthetic features for the website. He worked primarily on the frontend creating the style of the website.
 
