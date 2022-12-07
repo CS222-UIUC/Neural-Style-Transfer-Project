@@ -85,7 +85,7 @@ function App() {
           <div className={"neural"}>
             <div className={"text-content"}>What is a Neural Network?</div>
             <div className={"learn-content"}>
-              <h3>
+              <h3 style={{ padding: "0rem 12rem" }}>
                 Deep Neural Networks, a type of biologically inspired vision
                 models, have lately shown near-human performance in other
                 important visual perception domains including object and face
@@ -103,15 +103,13 @@ function App() {
                 What is Neural Style Transfer?
               </div>
               <div className={"learn-content"}>
-                <h3>
+                <h3 style={{ padding: "0rem 12rem" }}>
                   Using an optimization approach called neural style transfer,
                   two images—a content picture and a style reference image (such
                   as a piece of art by a well-known painter)—are combined to
                   create an output image that resembles the content image but is
                   "painted" in the manner of the style reference image.
                 </h3>
-
-                <h2>Let's Experience It Below </h2>
               </div>
             </div>
           </Parallax>
@@ -122,8 +120,10 @@ function App() {
           <div className={"blenderfix"}>
             <video src={Blender} autoPlay loop muted />
           </div>
+
           <div className={"overlay2"}>
             <div className={classes.wrapper}>
+              <h2 className={"header"}>Let's Experience It Below </h2>
               <div className={classes.control}>
                 <AddImage
                   onAddImage={addImageHandler}
@@ -164,8 +164,9 @@ function App() {
             bgImage={galaxy}
           >
             <div className={"neural"}>
-              <div className={"text-content"}>About Us</div>
+              <div className={"about"}>About Us</div>
               <div className={"learn-content"}>
+                {/* <h2>About Us</h2> */}
                 <h2>Contributers:</h2>
                 <h3>Jacob Shalabi, Ritul K. Soni, Jacob Ko, Daniel Ku</h3>
               </div>

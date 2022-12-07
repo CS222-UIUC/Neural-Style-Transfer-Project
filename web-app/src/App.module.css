@@ -23,7 +23,6 @@
   margin: auto;
   padding: 20px 0;
   max-width: 50vw;
-  
 }
 
 .content {
@@ -33,6 +32,10 @@
   max-height: 100vh;
 }
 
+.paragraph h3 {
+  padding: 12rem;
+}
+
 /* .loadingIcon {
   height: 100%;
   position: absolute;
@@ -40,4 +43,3 @@
   width: 100%;
   overflow: hidden;
 } */
-
