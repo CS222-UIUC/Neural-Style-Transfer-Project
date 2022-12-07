@@ -56,31 +56,35 @@ Our project utilizes React with JavaScript frontend, Express as a backend, and T
 
 ![image](images/ArchitectureDiagram.png)
 
-### Express Server
+### Backend
+
+#### Express Server
 
 We utilize an Express.js backend to run our server-side functionality which statically serves the model from our local machines to the backend API, which is to be fetched later from our frontend application. Having this backend is necessary for our application because unfortunately React does not support the traditional inclusion of tensorflow js via vanilla JS script tags, so our workaround is to deploy the model JSON onto a server and access it from there. 
 Main Contributors: Jacob S.
 
-### Style Transfer Model
+#### Style Transfer Model
 
 Used tensorflowjs_converter to convert Google’s arbitrary image stylization model from a Keras model to tensorflow.js. After model is successfully loaded, it can be called by the user by selecting images to actually perform a stylization. Once it is called, the content and style images are passed into the model as tensors, and after the process is executed, the output image is drawn onto a canvas to be displayed in our ImageList component. 
 Main Contributors: Jacob S.
 
-### Style Transfer App
+### Frontend
+
+#### Style Transfer App
 The frontend look and usability of the Style Transfer model is the app. There is one box where the user can upload their own image or choose from a preselected list as a base image, and there is another box where the user again has the same options but this time for the style. The box at the bottom then outputs the created image once it has been processed. 
 Main Contributors: Daniel Ku
 
-### Social Navigation Bar
+#### Social Navigation Bar
 
 Uses the React-Share Library. Role of the navigation bar is to allow users to easily share the website with other people via social media (Twitter, Facebook, Email). Does not directly interact with other components of the application, but it does keep track of the website url which it incorporates into a default message. 
 Main Contributors: Jacob K.
 
-### Download Button
+#### Download Button
 
 Uses the standard ReactJS library for its implementation. The role of the button is to allow the user to easily download the stylized image. The download button interacts with canvas element containing the stylized image to convert it to a downloadable png image. 
 Main Contributors: Jacob K, Jacob S.
 
-### Navigation Bar
+#### Navigation Bar
 Using multiple components the Nav Bar was made to allow easy traversal of the website with a static bar. Using React's built in Routing feature and some CSS to make the scrolling smooth, clicking each button on the nav bar seamlessly scrolls you to the selected portion of the page. 
 Main Contributors: Ritul Soni
 
@@ -126,10 +130,6 @@ Main Contributors: Ritul Soni
 [Jacob Ko](https://github.com/jacobko57) created the react share button where users can share the images they created with the style transfer to social media sites such as Twitter, Facebook, and also Email. Also helped to implement the button used to download the stylized image. 
 
 [Daniel Ku](https://github.com/dk9966) created the look of the Neural Style Transfer app the file upload buttons needed for users to upload their own images. He also created the barebones website where we expanded upon. 
-
-
-## License
-Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Acknowledgements
 Thank you to TensorFlow for the model we used for our app to work. 
