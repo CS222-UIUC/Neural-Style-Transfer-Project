@@ -49,7 +49,6 @@ Users of the website can scroll through some brief information on Neural Network
 
 Our project utilizes React with JavaScript frontend, Express as a backend, and TensorFlowJS for the model.
 
-ADD HOW EACH COMPONENT OF THE WEBSITE WORKS TOGETHER
 
 ## Components
 
@@ -68,11 +67,11 @@ Used tensorflowjs_converter to convert Google’s arbitrary image stylization mo
 
 ### Social Navigation Bar
 
-Uses the React-Share Library. Role of the navigation bar is to allow users to easily share the website with other people via social media (Twitter, Facebook, Email). Does not directly interact with other components of the application, but it does keep track of the website url which it incorporates into a default message. Main Contributors: Jacob K.
+Uses the React-Share Library. Role of the navigation bar is to allow users to easily share the website with other people via social media (Twitter, Facebook, Email). Does not directly interact with other components of the application, but it does keep track of the website url which it incorporates into a default message.
 
 ### Download Button
 
-Uses the standard ReactJS library. The role of the button is to allow the user to easily download the stylized image. The download button interacts with canvas element containing the stylized image to convert it to a downloadable png image. Main Contributors: Jacob K, Jacob S.
+Uses the standard ReactJS library. The role of the button is to allow the user to easily download the stylized image. The download button interacts with canvas element containing the stylized image to convert it to a downloadable png image.
 
 ###
 
@@ -115,7 +114,7 @@ Uses the standard ReactJS library. The role of the button is to allow the user t
 
 [Ritul K. Soni](https://github.com/RitulSoni) created the Nav Bar that redirects users to portions of the single page website. He also worked with Parallax implementing aesthetic features for the website. He worked primarily on the frontend creating the style of the website.
 
-[Jacob Ko](https://github.com/jacobko57) created the react share button where users can share the images they created with the style transfer to social media sites such as Snapchat, Facebook, and also Email.
+[Jacob Ko](https://github.com/jacobko57) created the react share button where users can share the images they created with the style transfer to social media sites such as Twitter, Facebook, and also Email. Also helped to implement the button used to download the stylized image. 
 
 [Daniel Ku](https://github.com/dk9966) created the look of the Neural Style Transfer app the file upload buttons needed for users to upload their own images. He also created the barebones website where we expanded upon. 
 
