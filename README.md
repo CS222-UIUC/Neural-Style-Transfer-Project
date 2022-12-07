@@ -70,8 +70,12 @@ Main Contributors: Jacob S.
 
 ### Frontend
 
-#### Style Transfer App
-The frontend look and usability of the Style Transfer model is the app. There is one box where the user can upload their own image or choose from a preselected list as a base image, and there is another box where the user again has the same options but this time for the style. The box at the bottom then outputs the created image once it has been processed. 
+#### Image Uploaders
+Allows users to upload an image for it to be displayed in a preview. Uploaded images are then available for selection in a dropdown menu. Uploaders are used for both content and style images.
+Main Contributors: Daniel Ku
+
+#### Image List
+List of all stored stylized images. Extends down as more images are added to list. Items are indexed and available for download via download button.
 Main Contributors: Daniel Ku
 
 #### Social Navigation Bar
