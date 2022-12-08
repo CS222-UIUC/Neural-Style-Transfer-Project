@@ -67,6 +67,7 @@ Main Contributors: Jacob S.
 #### Style Transfer Model
 
 Used tensorflowjs_converter to convert Google’s arbitrary image stylization model from a Keras model to tensorflow.js. After model is successfully loaded, it can be called by the user by selecting images to actually perform a stylization. Once it is called, the content and style images are passed into the model as tensors, and after the process is executed, the output image is drawn onto a canvas to be displayed in our ImageList component. 
+
 Main Contributors: Jacob S.
 
 ### Frontend
