@@ -62,6 +62,7 @@ Our project utilizes React with JavaScript frontend, Express as a backend, and T
 #### Express Server
 
 We utilize an Express.js backend to run our server-side functionality which statically serves the model from our local machines to the backend API, which is to be fetched later from our frontend application. Having this backend is necessary for our application because unfortunately React does not support the traditional inclusion of tensorflow js via vanilla JS script tags, so our workaround is to deploy the model JSON onto a server and access it from there. 
+
 Main Contributors: Jacob S.
 
 #### Style Transfer Model
@@ -75,24 +76,29 @@ Main Contributors: Jacob S.
 
 #### Image Uploaders
 Allows users to upload an image for it to be displayed in a preview. Uploaded images are then available for selection in a dropdown menu. Uploaders are used for both content and style images.
+
 Main Contributors: Daniel Ku
 
 #### Image List
 List of all stored stylized images. Extends down as more images are added to list. Items are indexed and available for download via download button.
+
 Main Contributors: Daniel Ku
 
 #### Social Navigation Bar
 
 Uses the React-Share Library. Role of the navigation bar is to allow users to easily share the website with other people via social media (Twitter, Facebook, Email). Does not directly interact with other components of the application, but it does keep track of the website url which it incorporates into a default message. 
+
 Main Contributors: Jacob K.
 
 #### Download Button
 
 Uses the standard ReactJS library for its implementation. The role of the button is to allow the user to easily download the stylized image. The download button interacts with canvas element containing the stylized image to convert it to a downloadable png image. 
+
 Main Contributors: Jacob K, Jacob S.
 
 #### Navigation Bar
 Using multiple components the Nav Bar was made to allow easy traversal of the website with a static bar. Using React's built in Routing feature and some CSS to make the scrolling smooth, clicking each button on the nav bar seamlessly scrolls you to the selected portion of the page. 
+
 Main Contributors: Ritul Soni
 
 ## Installation and Usage
