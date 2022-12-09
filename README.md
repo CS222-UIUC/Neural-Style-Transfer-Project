@@ -142,7 +142,7 @@ Main Contributors: Ritul Soni
 
 [Jacob Ko](https://github.com/jacobko57) created the react share button where users can share the images they created with the style transfer to social media sites such as Twitter, Facebook, and also Email. Also helped to implement the button used to download the stylized image. 
 
-[Daniel Ku](https://github.com/dk9966) created the look of the Neural Style Transfer app the file upload buttons needed for users to upload their own images. He also created the barebones website where we expanded upon. 
+[Daniel Ku](https://github.com/dk9966) created the frontend structure of the Neural Style Transfer app, which included the image and style upload functionalities as well as the stylized image listing framework. He also worked on connecting backend functionality with the frontend framework to allow for the stylization to properly function.
 
 ## Acknowledgements
 Thank you to TensorFlow for the model we used for our app to work. 
